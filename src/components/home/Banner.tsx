@@ -17,10 +17,10 @@ export default function Banner() {
   const categories = ["All", "New", "Used"];
 
   return (
-    <div style={{ backgroundImage: `url(${bannerImg.src})` }} className="w-full h-screen bg-cover bg-center -mt-28">
-      <div className="w-full h-full flex flex-col space-y-12 items-center justify-center text-white pt-20">
+    <div style={{ backgroundImage: `url(${bannerImg.src})` }} className="w-full h-screen bg-cover bg-center -mt-20">
+      <div className="w-full h-full flex flex-col space-y-12 items-center justify-center text-white pt-20 px-4">
         <p>Find cars for sale and for rent near you</p>
-        <h1 className="text-6xl font-bold text-white">Find Your Perfect Car</h1>
+        <h1 className="md:text-6xl text-4xl font-bold text-white">Find Your Perfect Car</h1>
 
         {/* Categories */}
         <div className="flex space-x-4">
@@ -39,7 +39,7 @@ export default function Banner() {
         </div>
 
         {/* Search */}
-        <div className="flex space-x-4 bg-white rounded-full p-2 px-6 text-primary font-semibold">
+        <div className="flex md:flex-row flex-col space-x-4 space-y-2 py-4  bg-white rounded md:rounded-full p-2 px-6 text-primary font-semibold">
           <Select>
             <SelectTrigger className="w-[180px] border-none">
               <SelectValue placeholder="Any Makes" />
@@ -83,7 +83,7 @@ export default function Banner() {
         <p>Or Browse Featured Model</p>
 
         {/* Browse Featured Model */}
-        <div className="flex items-center justify-center gap-4">
+        <div className="md:flex grid grid-cols-2 md:pb-0 pb-6 items-center justify-center gap-4">
           {/* SUV */}
           <div className="relative">
             <div className="rounded-full p-2 cursor-pointer opacity-20 bg-white w-[120px] h-[40px]"></div>
