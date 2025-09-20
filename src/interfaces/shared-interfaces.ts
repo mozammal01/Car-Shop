@@ -37,6 +37,15 @@ export interface StatisticItemProps {
   label: string;
 }
 
+export interface CategoryProps {
+  category1: string;
+  category2: string;
+  category3: string;
+  category4?: string;
+  category5?: string;
+  category6?: string;
+}
+
 import { SVGProps } from "react";
 
 export interface IconProps extends SVGProps<SVGSVGElement> {
