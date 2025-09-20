@@ -6,6 +6,7 @@ import SellUs from "@/components/home/SellUs";
 import Statistics from "@/components/home/Statistics";
 import Services from "@/components/home/Services";
 import PopulerCars from "@/components/home/PopulerCars";
+import CarFinder from "@/components/home/CarFinder";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
           <Statistics />
           <Services />
           <PopulerCars />
+          <CarFinder />
         </div>
       </div>
     </>
