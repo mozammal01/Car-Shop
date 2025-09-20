@@ -21,6 +21,22 @@ export interface CarCardProps {
   category?: string;
 }
 
+export interface CountingAnimationProps {
+  from?: number;
+  to: number;
+  duration?: number;
+  suffix?: string;
+  className?: string;
+  decimals?: number;
+}
+
+
+export interface StatisticItemProps {
+  value: number;
+  suffix: string;
+  label: string;
+}
+
 import { SVGProps } from "react";
 
 export interface IconProps extends SVGProps<SVGSVGElement> {
