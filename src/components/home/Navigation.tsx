@@ -136,14 +136,14 @@ export default function Navigation() {
             ))}
             <Link
               href="/signin"
-              className="flex items-center space-x-2  text-white hover:text-primary font-medium transition-colors duration-200"
+              className="flex md:hidden lg:flex items-center space-x-2  text-white hover:text-primary font-medium transition-colors duration-200"
             >
               <div className="flex items-center space-x-2 hover:bg-white px-4 rounded-md py-2">
                 <User className="h-4 w-4" />
                 <span>Sign In</span>
               </div>
             </Link>
-            <Button className="bg-primary md:bg-transparent hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200">
+            <Button className="bg-primary md:bg-transparent hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200 md:hidden lg:flex">
               Submit Listing
             </Button>
           </div>

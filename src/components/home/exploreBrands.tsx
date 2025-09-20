@@ -9,10 +9,10 @@ import Image from "next/image";
 
 export default function ExploreBrands() {
   return (
-    <div className="bg-slate-100 md:rounded-[90px] ">
+    <div className="bg-slate-100 md:rounded-t-[90px] ">
       <div className="max-w-7xl mx-auto py-20 px-4">
         <div className="flex items-center justify-between">
-          <h1 className="md:text-4xl text-3xl font-bold">Explore Our Premium Brands</h1>
+          <h1 className="md:text-4xl text-2xl font-bold">Explore Our Premium Brands</h1>
           <ExploreArrow text="Explore All Brands" />
         </div>
         <div className="md:flex grid grid-cols-2 items-center my-10 gap-4 justify-center">
