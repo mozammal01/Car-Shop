@@ -4,6 +4,7 @@ import ExploreVehicles from "@/components/home/ExploreVehicles";
 import Navigation from "@/components/home/Navigation";
 import SellUs from "@/components/home/SellUs";
 import Statistics from "@/components/home/Statistics";
+import Services from "@/components/home/services";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           <ExploreVehicles />
           <SellUs />
           <Statistics />
+          <Services />
         </div>
       </div>
     </>
