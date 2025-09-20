@@ -21,6 +21,17 @@ export interface CarCardProps {
   category?: string;
 }
 
+export interface PopularCardProps {
+  imgSrc: StaticImageData;
+  title: string;
+  description: string;
+  meterText: string;
+  fuelText: string;
+  gearText: string;
+  price: string;
+  category?: string;
+}
+
 export interface CountingAnimationProps {
   from?: number;
   to: number;
@@ -44,6 +55,7 @@ export interface CategoryProps {
   category4?: string;
   category5?: string;
   category6?: string;
+  className?: string;
 }
 
 import { SVGProps } from "react";

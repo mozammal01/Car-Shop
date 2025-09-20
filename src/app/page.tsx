@@ -4,7 +4,8 @@ import ExploreVehicles from "@/components/home/ExploreVehicles";
 import Navigation from "@/components/home/Navigation";
 import SellUs from "@/components/home/SellUs";
 import Statistics from "@/components/home/Statistics";
-import Services from "@/components/home/services";
+import Services from "@/components/home/Services";
+import PopulerCars from "@/components/home/PopulerCars";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
           <SellUs />
           <Statistics />
           <Services />
+          <PopulerCars />
         </div>
       </div>
     </>

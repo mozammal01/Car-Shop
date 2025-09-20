@@ -5,7 +5,7 @@ import TrusteedIcon from "../icons/trusteedIcon";
 
 export default function Services() {
   return (
-    <div className="max-w-[1700px] mx-auto px-4 my-12">
+    <div className="max-w-[1700px] mx-auto px-4 my-20 mb-40">
       <h1 className="md:text-5xl text-3xl font-bold">Why Choose Us ? </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
         {/* Special Financing Offers */}

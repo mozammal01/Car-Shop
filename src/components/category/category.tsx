@@ -3,7 +3,7 @@ import { CategoryProps } from "@/interfaces/shared-interfaces";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
-export default function Category({ category1, category2, category3, category4, category5, category6 }: CategoryProps) {
+export default function Category({ category1, category2, category3, category4, category5, category6 ,className}: CategoryProps) {
   const [cat, setCat] = useState(category1);
   const categories = [category1, category2, category3, category4, category5, category6];
   return (
@@ -12,7 +12,7 @@ export default function Category({ category1, category2, category3, category4, c
         {categories.map((category,i) => (
           <button
             key={i}
-            className={cn(cat === category ? "border-b-2 border-primary p-2 cursor-pointer" : "p-2 cursor-pointer")}
+            className={cn(cat === category ? "border-b-2 border-primary p-2 cursor-pointer" : "p-2 cursor-pointer", className)}
             onClick={() => setCat(category || "")}
           >
             {category}
