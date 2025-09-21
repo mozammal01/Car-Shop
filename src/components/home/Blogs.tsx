@@ -32,7 +32,7 @@ export default function Blogs() {
     },
   ];
   return (
-    <div className="max-w-[1500px] mx-auto px-4 my-20 mb-40">
+    <div className="container mx-auto px-4 my-20 mb-40">
       <div className="flex items-center justify-between">
         <h1 className="md:text-4xl text-3xl font-bold">Latest Blog Posts</h1>
         <ExploreArrow text="View All" />

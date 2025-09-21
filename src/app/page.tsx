@@ -10,6 +10,7 @@ import CarFinder from "@/components/home/CarFinder";
 import Testimonial from "@/components/home/Testimonial";
 import Blogs from "@/components/home/Blogs";
 import BuyOrSell from "@/components/home/BuyOrSell";
+import Footer from "@/components/home/Footer";
 
 export default function Home() {
   return (
@@ -17,18 +18,17 @@ export default function Home() {
       <div className="relative">
         <Navigation />
         <Banner />
-        <div className="absolute md:top-[830px] w-full">
-          <ExploreBrands />
-          <ExploreVehicles />
-          <SellUs />
-          <Statistics />
-          <Services />
-          <PopulerCars />
-          <CarFinder />
-          <Testimonial />
-          <Blogs />
-          <BuyOrSell />
-        </div>
+        <ExploreBrands />
+        <ExploreVehicles />
+        <SellUs />
+        <Statistics />
+        <Services />
+        <PopulerCars />
+        <CarFinder />
+        <Testimonial />
+        <Blogs />
+        <BuyOrSell />
+        <Footer />
       </div>
     </>
   );

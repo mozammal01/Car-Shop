@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function ExploreBrands() {
   return (
-    <div className="bg-slate-100 md:rounded-t-[90px] ">
+    <div className="bg-slate-100 md:rounded-t-[90px] -mt-20">
       <div className="max-w-7xl mx-auto py-20 px-4">
         <div className="flex items-center justify-between">
           <h1 className="md:text-4xl text-2xl font-bold">Explore Our Premium Brands</h1>
@@ -18,32 +18,32 @@ export default function ExploreBrands() {
         <div className="md:flex grid grid-cols-2 items-center my-10 gap-4 justify-center">
           {/* Audi */}
           <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">
-          <Image src={audi} alt="audi" width={100} height={100} />
+          <Image src={audi} alt="audi" width={100} height={100} unoptimized />
           <span className="text-lg font-bold">Audi</span>
           </div>
           {/* BMW */}
           <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">
-          <Image src={bmw} alt="bmw" width={100} height={100} />
+          <Image src={bmw} alt="bmw" width={100} height={100} unoptimized />
           <span className="text-lg font-bold">BMW</span>
           </div>
           {/* Ford */}
           <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">
-          <Image src={ford} alt="ford" width={100} height={100} />
+          <Image src={ford} alt="ford" width={100} height={100} unoptimized />
           <span className="text-lg font-bold">Ford</span>
           </div>
           {/* Mercedes */}
           <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">
-          <Image src={mercedes} alt="mercedes" width={100} height={100} />
+          <Image src={mercedes} alt="mercedes" width={100} height={100} unoptimized />
           <span className="text-lg font-bold">Mercedes</span>
           </div>
           {/* Peugeot */}
           <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">
-          <Image src={peugeot} alt="peugeot" width={100} height={100} />
+          <Image src={peugeot} alt="peugeot" width={100} height={100} unoptimized />
           <span className="text-lg font-bold">Peugeot</span>
           </div>
           {/* Volk Swegen */}
           <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">
-          <Image src={volkSwegen} alt="volkSwegen" width={100} height={100} />
+          <Image src={volkSwegen} alt="volkSwegen" width={100} height={100} unoptimized />
           <span className="text-lg font-bold">Volk Swegen</span>
           </div>
         </div>

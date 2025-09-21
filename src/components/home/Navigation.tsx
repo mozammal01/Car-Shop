@@ -82,7 +82,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="w-full shadow-sm sticky top-0 z-50 bg-primary md:bg-transparent" ref={navRef}>
+    <nav className="w-full shadow-sm top-0 z-50 bg-primary md:bg-transparent" ref={navRef}>
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Left Side - Logo */}

@@ -42,7 +42,7 @@ export default function PopulerCars() {
 
   return (
     <div className="bg-[#050B20] text-white xl:h-[900px] h-full p-20">
-      <div className="max-w-[1500px] mx-auto">
+      <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <h1 className="md:text-5xl text-3xl font-bold">Populer Makes</h1>
           <ExploreArrow text="View All" />

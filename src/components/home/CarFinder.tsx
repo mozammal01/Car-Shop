@@ -3,7 +3,7 @@ import Category from "../category/category";
 
 export default function CarFinder() {
   return (
-    <div className="max-w-[1500px] mx-auto px-4 my-20 mb-40">
+    <div className="container mx-auto px-4 my-20 mb-40">
       <div className="flex items-center justify-between">
         <h1 className="md:text-5xl text-3xl font-bold">Shop Box Car Your Way</h1>
         <ExploreArrow text="View More" />

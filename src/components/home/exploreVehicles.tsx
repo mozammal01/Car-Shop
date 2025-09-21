@@ -69,10 +69,10 @@ export default function ExploreVehicles() {
         <h1 className="md:text-4xl text-3xl font-bold">Explore All Vehicles</h1>
         <ExploreArrow text="View All" />
       </div>
-      <div className="flex space-x-4 font-semibold max-w-[1500px] mx-auto">
+      <div className="flex space-x-4 font-semibold container mx-auto">
         <Category category1="In Stock" category2="New Cars" category3="Used Cars" />
       </div>
-      {/* <div className="flex space-x-4 my-10 font-semibold max-w-[1500px] mx-auto">
+      {/* <div className="flex space-x-4 my-10 font-semibold container mx-auto">
         {categories.map((category) => (
           <button
             key={category}
@@ -83,7 +83,7 @@ export default function ExploreVehicles() {
           </button>
         ))}
       </div> */}
-      <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-4 max-w-[1500px] mx-auto">
+      <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-4 container mx-auto">
         {cars.map((car) => (
           <CarCard
             key={car.title}
