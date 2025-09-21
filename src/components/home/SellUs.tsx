@@ -19,7 +19,7 @@ export default function SellUs() {
           </div>
 
           {/* Content Section */}
-          <div className="w-full lg:w-[865px] bg-[#EEF1FB] p-6 md:p-12 lg:p-20 lg:px-40 flex flex-col justify-center space-y-6 md:space-y-8 min-h-[400px] lg:h-[684px]">
+          <div className="w-full lg:w-[865px] 2xl:bg-[#EEF1FB] p-6 md:p-12 lg:p-20 lg:px-40 flex flex-col justify-center space-y-6 md:space-y-8 min-h-[400px] lg:h-[684px]">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">Get A Fair Price For Your Car Sell To Us Today</h1>
             <p className="text-gray-500 text-sm md:text-base leading-relaxed">
               We are committed to providing our customers with exceptional service, competitive pricing, and a wide range of.
