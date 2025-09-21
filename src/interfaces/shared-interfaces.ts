@@ -32,6 +32,15 @@ export interface PopularCardProps {
   category?: string;
 }
 
+export interface BlogCardProps {
+  imgSrc: StaticImageData;
+  title: string;
+  description: string;
+  date: string;
+  author: string;
+  category?: string;
+}
+
 export interface CountingAnimationProps {
   from?: number;
   to: number;

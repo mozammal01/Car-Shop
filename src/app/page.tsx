@@ -7,7 +7,8 @@ import Statistics from "@/components/home/Statistics";
 import Services from "@/components/home/Services";
 import PopulerCars from "@/components/home/PopulerCars";
 import CarFinder from "@/components/home/CarFinder";
-import Testimonial from "@/components/home/testimonial";
+import Testimonial from "@/components/home/Testimonial";
+import Blogs from "@/components/home/Blogs";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
           <PopulerCars />
           <CarFinder />
           <Testimonial />
+          <Blogs />
         </div>
       </div>
     </>
