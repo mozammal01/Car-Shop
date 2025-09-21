@@ -9,6 +9,7 @@ import PopulerCars from "@/components/home/PopulerCars";
 import CarFinder from "@/components/home/CarFinder";
 import Testimonial from "@/components/home/Testimonial";
 import Blogs from "@/components/home/Blogs";
+import BuyOrSell from "@/components/home/BuyOrSell";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
           <CarFinder />
           <Testimonial />
           <Blogs />
+          <BuyOrSell />
         </div>
       </div>
     </>

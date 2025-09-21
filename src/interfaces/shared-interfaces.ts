@@ -41,6 +41,12 @@ export interface BlogCardProps {
   category?: string;
 }
 
+export interface BuyOrSellCardProps {
+  title: string;
+  description: string;
+  buy: boolean;
+}
+
 export interface CountingAnimationProps {
   from?: number;
   to: number;
@@ -49,7 +55,6 @@ export interface CountingAnimationProps {
   className?: string;
   decimals?: number;
 }
-
 
 export interface StatisticItemProps {
   value: number;
