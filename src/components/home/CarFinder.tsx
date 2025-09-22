@@ -19,7 +19,7 @@ export default function CarFinder() {
         >
           Shop Box Car Your Way
         </motion.h2>
-        <ExploreArrow text="View More" />
+        <ExploreArrow href="/carsFinder" text="View More" />
       </div>
       <Category category1="New Cars For Sale" category2="Used Cars For Sale" category3="Browse By Type" category4="Browse By Brand" />
 

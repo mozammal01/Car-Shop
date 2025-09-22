@@ -1,11 +1,11 @@
 "use client";
 import ExploreArrow from "../exploreArrow/ExploreArrow";
-import audi from "@/../public/brands/b1.png";
-import bmw from "@/../public/brands/b2.png";
-import ford from "@/../public/brands/b3.png";
-import mercedes from "@/../public/brands/b4.png";
-import peugeot from "@/../public/brands/b5.png";
-import volkSwegen from "@/../public/brands/b6.png";
+import audi from "@/../public/brands/audi.png"
+import bmw from "@/../public/brands/bmw.png";
+import ford from "@/../public/brands/ford.png";
+import mercedes from "@/../public/brands/mercedes.png";
+import peugeot from "@/../public/brands/peugeot.png";
+import volkSwegen from "@/../public/brands/volkswagen.png";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -24,7 +24,7 @@ export default function ExploreBrands() {
       >
         <div className="flex items-center justify-between">
           <h2 className="md:text-4xl text-2xl font-bold">Explore Our Premium Brands</h2>
-          <ExploreArrow text="Explore All Brands" />
+          <ExploreArrow href="/brands" text="Explore All Brands" />
         </div>
         <div className="md:flex grid grid-cols-2 items-center my-10 gap-4 justify-center">
           {/* Audi */}

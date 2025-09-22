@@ -69,7 +69,7 @@ export default function SellUs() {
 
             {/* Button */}
             <Button className="w-full sm:w-[150px] h-12 md:h-[60px] text-sm md:text-base">
-              <ExploreArrow text="Get Started" />
+              <ExploreArrow href="/sell" text="Get Started" className="hover:text-white" />
             </Button>
           </motion.div>
         </div>

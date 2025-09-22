@@ -57,7 +57,7 @@ export default function PopulerCars() {
           >
             Populer Makes
           </motion.h2>
-          <ExploreArrow text="View All" />
+          <ExploreArrow href="/popularCars" text="View All" />
         </div>
         <Category category1="Audi" category2="Ford" category3="Mercedes" />
         <motion.div

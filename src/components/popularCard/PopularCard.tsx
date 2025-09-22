@@ -42,7 +42,7 @@ export default function PopularCard({ imgSrc, title, description, meterText, fue
         <hr />
         <div className="flex justify-between items-center my-4">
           <span className="text-2xl font-bold me-20">{price}</span>
-          <ExploreArrow text="View Details" />
+          <ExploreArrow href="/cars" text="View Details" />
         </div>
       </div>
     </div>

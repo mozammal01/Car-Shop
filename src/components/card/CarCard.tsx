@@ -38,7 +38,7 @@ export default function CarCard({ imgSrc, title, description, meterText, fuelTex
         <hr />
         <div className="flex justify-between items-center my-4">
           <span className="text-2xl font-bold">{price}</span>
-          <ExploreArrow text="View Details" className="text-primary" />
+          <ExploreArrow href="/cars" text="View Details" className="text-primary" />
         </div>
       </div>
     </div>

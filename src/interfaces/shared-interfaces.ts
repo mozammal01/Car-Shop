@@ -8,6 +8,11 @@ export interface NavButton {
   menuItem3: string;
   menuItem4: string;
 }
+export interface ExploreArrowProps {
+  text: string;
+  className?: string;
+  href: string;
+}
 
 import { StaticImageData } from "next/image";
 export interface CarCardProps {

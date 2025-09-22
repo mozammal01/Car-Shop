@@ -48,7 +48,7 @@ export default function Blogs() {
         >
           Latest Blog Posts
         </motion.h2>
-        <ExploreArrow text="View All" />
+        <ExploreArrow href="/blogs" text="View All" />
       </div>
 
       <motion.div

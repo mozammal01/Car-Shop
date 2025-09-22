@@ -13,7 +13,7 @@ export default function BuyOrSellCard({ title, description, buy }: BuyOrSellCard
         <p className="text-gray-700 lg:w-[80%] font-semibold w-full">{description}</p>
         <div className="flex items-center justify-between">
           <Button className={cn("py-8", buy ? "bg-[#405FF2]" : "bg-black")}>
-            <ExploreArrow text="Get Started" />
+            <ExploreArrow href="/buy" text="Get Started" />
           </Button>
           {buy ? <BuyOrSellCarIcon size={110} /> : <BuyOrSellSellIcon size={110} />} 
         </div>

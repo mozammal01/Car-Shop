@@ -74,7 +74,7 @@ export default function ExploreVehicles() {
         className="flex items-center justify-between container mx-auto"
       >
         <h2 className="md:text-4xl text-3xl font-bold">Explore All Vehicles</h2>
-        <ExploreArrow text="View All" />
+        <ExploreArrow href="/vehicles" text="View All" />
       </motion.div>
       <div className="flex space-x-4 font-semibold container mx-auto">
         <Category category1="In Stock" category2="New Cars" category3="Used Cars" />
