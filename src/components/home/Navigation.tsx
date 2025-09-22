@@ -6,11 +6,13 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "../ui/button";
 import { Menu, X, ChevronDown, User } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion, useInView } from "framer-motion";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(navRef, { once: true });
 
   const toggleMobileMenu = () => {
     setIsOpen(!isOpen);
@@ -82,7 +84,14 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="w-full shadow-sm top-0 z-50 bg-primary md:bg-transparent" ref={navRef}>
+    <motion.nav
+      ref={navRef}
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+      transition={{ duration: 0.5 }}
+      className="w-full shadow-sm top-0 z-50 bg-primary md:bg-transparent"
+
+    >
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Left Side - Logo */}
@@ -237,6 +246,6 @@ export default function Navigation() {
           </div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

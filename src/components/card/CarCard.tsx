@@ -18,7 +18,7 @@ export default function CarCard({ imgSrc, title, description, meterText, fuelTex
         {category && <span className={cn("absolute top-4 left-4 text-white px-2 py-1 rounded-md", category === "Great Price" ? "bg-green-600" : "bg-blue-600")}>{category}</span>}
       </div>
       <div className="p-4">
-        <h1 className="text-xl font-bold">{title}</h1>
+        <h2 className="text-xl font-bold">{title}</h2>
         <p className="text-gray-500 pb-1">{description}</p>
         <hr />
         <div className="flex justify-evenly items-center gap-2 my-2">

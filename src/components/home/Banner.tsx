@@ -2,7 +2,6 @@
 import bannerImg from "@/../public/banner/background.jpg";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "../ui/button";
 import { SearchIcon } from "lucide-react";
@@ -11,14 +10,22 @@ import SedanCarIcon from "../icons/sedanCarIcon";
 import HatchbackCarIcon from "../icons/hatchbackCarIcon";
 import CoupeCarIcon from "../icons/coupeCarIcon";
 import HybridCarIcon from "../icons/hybridCarIcon";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 export default function Banner() {
   const [cat, setCat] = useState("All");
   const categories = ["All", "New", "Used"];
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <div style={{ backgroundImage: `url(${bannerImg.src})` }} className="w-full h-screen bg-cover bg-center -mt-20">
-      <div className="w-full h-full flex flex-col space-y-12 items-center justify-center text-white pt-20 px-4">
+      <motion.div ref={ref} 
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+      transition={{ duration: 0.5 }}
+      className="w-full h-full flex flex-col space-y-12 items-center justify-center text-white pt-20 px-4">
         <p>Find cars for sale and for rent near you</p>
         <h1 className="md:text-6xl text-4xl font-bold text-white">Find Your Perfect Car</h1>
 
@@ -125,7 +132,7 @@ export default function Banner() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -72,6 +72,13 @@ export interface CategoryProps {
   className?: string;
 }
 
+export interface FeedbackProps {
+  img: StaticImageData;
+  name: string;
+  job: string;
+  rating: string;
+  description: string;
+}
 import { SVGProps } from "react";
 
 export interface IconProps extends SVGProps<SVGSVGElement> {

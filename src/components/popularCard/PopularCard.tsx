@@ -22,7 +22,7 @@ export default function PopularCard({ imgSrc, title, description, meterText, fue
         {category && <span className={cn("absolute top-4 left-4 text-white px-2 py-1 rounded-md", category === "Great Price" ? "bg-green-600" : "bg-blue-600")}>{category}</span>}
       </div>
       <div className="p-4">
-        <h1 className="text-xl font-bold">{title}</h1>
+        <h2 className="text-xl font-bold">{title}</h2>
         <p className="pb-1">{description}</p>
         <hr />
         <div className="flex flex-col justify-evenly gap-2 my-2 text-white">

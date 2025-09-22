@@ -6,11 +6,14 @@ import ford21 from "@/../public/vehicles/Ford-2021.png";
 import ford23 from "@/../public/vehicles/Ford-2023.png";
 import corolla from "@/../public/vehicles/Corolla.png";
 import glc from "@/../public/vehicles/GLC.png";
-import { cn } from "@/lib/utils";
 import CarCard from "../card/CarCard";
 import Category from "../category/category";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function ExploreVehicles() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const cars = [
     {
       imgSrc: ford21,
@@ -61,29 +64,28 @@ export default function ExploreVehicles() {
       category: "Great Price",
     },
   ];
-  const [cat, setCat] = useState("In Stock");
-  const categories = ["In Stock", "New Cars", "Used Cars"];
   return (
     <div className="max-w-[1600px] mx-auto py-20 px-4">
-      <div className="flex items-center justify-between max-w-7xl mx-auto">
-        <h1 className="md:text-4xl text-3xl font-bold">Explore All Vehicles</h1>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+        transition={{ duration: 0.5 }}
+        className="flex items-center justify-between container mx-auto"
+      >
+        <h2 className="md:text-4xl text-3xl font-bold">Explore All Vehicles</h2>
         <ExploreArrow text="View All" />
-      </div>
+      </motion.div>
       <div className="flex space-x-4 font-semibold container mx-auto">
         <Category category1="In Stock" category2="New Cars" category3="Used Cars" />
       </div>
-      {/* <div className="flex space-x-4 my-10 font-semibold container mx-auto">
-        {categories.map((category) => (
-          <button
-            key={category}
-            className={cn(cat === category ? "border-b-2 border-primary p-2 cursor-pointer" : "p-2 cursor-pointer")}
-            onClick={() => setCat(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div> */}
-      <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-4 container mx-auto">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+        transition={{ duration: 0.5 }}
+        className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-4 container mx-auto"
+      >
         {cars.map((car) => (
           <CarCard
             key={car.title}
@@ -97,7 +99,7 @@ export default function ExploreVehicles() {
             category={car.category}
           />
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

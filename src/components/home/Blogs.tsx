@@ -1,10 +1,15 @@
+"use client";
 import BlogCard from "../blogCard/BlogCard";
 import ExploreArrow from "../exploreArrow/ExploreArrow";
 import BMWXB7 from "@/../public/blogs/BMW-XB7.png";
 import BMWX5 from "@/../public/blogs/BMW-X5.png";
 import BMWX6 from "@/../public/blogs/BMW-X6.png";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 export default function Blogs() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const blogs = [
     {
       imgSrc: BMWXB7,
@@ -34,15 +39,29 @@ export default function Blogs() {
   return (
     <div className="container mx-auto px-4 my-20 mb-40">
       <div className="flex items-center justify-between">
-        <h1 className="md:text-4xl text-3xl font-bold">Latest Blog Posts</h1>
+        <motion.h2
+          ref={ref}
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+          transition={{ duration: 0.5 }}
+          className="md:text-4xl text-3xl font-bold"
+        >
+          Latest Blog Posts
+        </motion.h2>
         <ExploreArrow text="View All" />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 my-12">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+        transition={{ duration: 0.5 }}
+        className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 my-12"
+      >
         {blogs.map((blog) => (
           <BlogCard key={blog.title} {...blog} />
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

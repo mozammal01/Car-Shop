@@ -1,3 +1,4 @@
+"use client";
 import { Input } from "@/components/ui/input";
 import { Button } from "../ui/button";
 import AppleIcon from "../icons/appleIcon";
@@ -5,23 +6,44 @@ import GooglePlayIcon from "../icons/googlePlayIcon";
 import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 import UpArrow from "../icons/upArrowIcon";
 import Link from "next/link";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 export default function Footer() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <div className="bg-[#050B20] py-10 px-4 text-white relative">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between my-10 px-4">
-          <div>
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 100 }}
+            transition={{ duration: 0.5 }}
+          >
             <h4 className="text-2xl font-semibold">Join CarHut</h4>
             <p className="">Receive pricing updates, shopping tips & more!</p>
-          </div>
-          <div className="relative">
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 100 }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
             <Input type="email" placeholder="Enter your email" className="bg-[#ffffff23] border-none rounded-full px-8 py-8 md:w-sm" />
             <Button className="rounded-full absolute right-8 top-1/2 -translate-y-1/2">Sign Up</Button>
-          </div>
+          </motion.div>
         </div>
         {/*  */}
-        <div className="border-t-1 border-y-[#ffffff15] py-10">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+          transition={{ duration: 0.5 }}
+          className="border-t-1 border-y-[#ffffff15] py-10"
+        >
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {/*  */}
             <div>
@@ -97,7 +119,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="border-t-1 border-y-[#ffffff15] pt-4">
         <div className="container mx-auto flex md:flex-row flex-col gap-4 md:justify-between md:items-center">
