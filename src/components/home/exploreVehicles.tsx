@@ -16,6 +16,7 @@ export default function ExploreVehicles() {
   const isInView = useInView(ref, { once: true });
   const cars = [
     {
+      id: 1,
       imgSrc: ford21,
       title: "Ford Transit – 2021",
       description: "4.0 D5 PowerPulse Momentum 5dr AW…",
@@ -26,6 +27,7 @@ export default function ExploreVehicles() {
       category: "Great Price",
     },
     {
+      id: 2,
       imgSrc: glc,
       title: "New GLC - 2023",
       description: "4.0 D5 PowerPulse Momentum 5dr AW…",
@@ -36,6 +38,7 @@ export default function ExploreVehicles() {
       category: "Low Mileage",
     },
     {
+      id: 3,
       imgSrc: audi,
       title: "Audi A6 3.5 - New",
       description: "3.5 D5 PowerPulse Momentum 5dr AW…",
@@ -45,6 +48,7 @@ export default function ExploreVehicles() {
       price: "$58,000",
     },
     {
+      id: 4,
       imgSrc: corolla,
       title: "Corolla Altis – 2023",
       description: "3.5 D5 PowerPulse Momentum 5dr AW…",
@@ -54,6 +58,7 @@ export default function ExploreVehicles() {
       price: "$45,000",
     },
     {
+      id: 5,
       imgSrc: ford23,
       title: "Ford Transit – 2023",
       description: "3.5 D5 PowerPulse Momentum 5dr AW…",
@@ -88,7 +93,8 @@ export default function ExploreVehicles() {
       >
         {cars.map((car) => (
           <CarCard
-            key={car.title}
+            key={car.id}
+            id={car.id}
             imgSrc={car.imgSrc}
             title={car.title}
             description={car.description}

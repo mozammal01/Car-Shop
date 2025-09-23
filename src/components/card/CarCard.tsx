@@ -7,9 +7,9 @@ import { CarCardProps } from "@/interfaces/shared-interfaces";
 import SavedIcon from "../icons/savedIcon";
 import { cn } from "@/lib/utils";
 
-export default function CarCard({ imgSrc, title, description, meterText, fuelText, gearText, price, category }: CarCardProps) {
+export default function CarCard({ imgSrc, title, description, meterText, fuelText, gearText, price, category, id }: CarCardProps) {
   return (
-    <div className="w-[328px] h-[433px] bg-white rounded-md border-t-0 border-1 border-gray-300 rounded-t-2xl">
+    <div className="w-[328px] h-[433px] shadow-lg bg-white rounded-md rounded-t-2xl">
       <div className="relative">
         <Image src={imgSrc} alt="car" width={328} height={200} className="rounded-t-2xl object-cover max-h-[200px]" />
         <span className="absolute top-4 right-4 bg-white text-black w-9 h-9 rounded-full flex items-center justify-center">
@@ -38,7 +38,7 @@ export default function CarCard({ imgSrc, title, description, meterText, fuelTex
         <hr />
         <div className="flex justify-between items-center my-4">
           <span className="text-2xl font-bold">{price}</span>
-          <ExploreArrow href="/cars" text="View Details" className="text-primary" />
+          <ExploreArrow href={`/vehicles/${id}`} text="View Details" className="text-primary" />
         </div>
       </div>
     </div>

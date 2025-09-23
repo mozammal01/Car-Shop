@@ -24,6 +24,30 @@ export interface CarCardProps {
   gearText: string;
   price: string;
   category?: string;
+  id: number;
+}
+
+export interface VehiclesDetailsProps {
+  title: string;
+  subTitle: string;
+  year: string;
+  location: string;
+  price: string;
+  date: string;
+  views: string;
+  description: string;
+  carId: string;
+  manufacturer: string;
+  model: string;
+  transmission: string;
+  typeOfDrive: string;
+  fuel: string;
+  engine: string;
+  enginePower: string;
+  enginePower2: string;
+  mileage: string;
+  features: string[];
+  img: StaticImageData[];
 }
 
 export interface PopularCardProps {
