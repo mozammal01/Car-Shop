@@ -113,3 +113,20 @@ import { SVGProps } from "react";
 export interface IconProps extends SVGProps<SVGSVGElement> {
   size?: number;
 }
+
+export interface DetailsProps {
+  carId: string;
+  manufacturer: string;
+  model: string;
+  transmission: string;
+  typeOfDrive: string;
+  fuel: string;
+  engine: string;
+  enginePower: string;
+  enginePower2: string;
+  mileage: string;
+}
+
+export interface FeaturesProps {
+  features: string[];
+}
