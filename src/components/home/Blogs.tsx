@@ -37,14 +37,14 @@ export default function Blogs() {
     },
   ];
   return (
-    <div className="container mx-auto px-4 my-20 mb-40">
+    <div className="container mx-auto px-4 my-20 mb-40" id="blog">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
         transition={{ duration: 0.5 }}
       >
-        <ExploreArrow href="/blogs" titleClassName="md:text-4xl text-3xl font-bold" title="Latest Blog Posts" arrowText="View All" />
+        <ExploreArrow href="/" titleClassName="md:text-4xl text-3xl font-bold" title="Latest Blog Posts" arrowText="View All" />
       </motion.div>
 
       <motion.div

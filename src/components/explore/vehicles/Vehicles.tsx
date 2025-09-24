@@ -3,7 +3,7 @@ import CarCard from "@/components/card/CarCard";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import {cars} from "@/data/cars"
-export default function Vehicles() {
+export default function Vehicles({filteredCars}: {filteredCars: typeof cars}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   
@@ -15,7 +15,7 @@ export default function Vehicles() {
       transition={{ duration: 0.5 }}
       className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-10 text-center"
     >
-      {cars.map((car, index) => (
+      {filteredCars.length > 0 ? filteredCars.map((car, index) => (
         <motion.div
           key={car.id}
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
@@ -40,7 +40,7 @@ export default function Vehicles() {
           category={car.category}
           />
         </motion.div>
-      ))}
+      )) : <div className="text-center text-2xl font-bold">No cars found</div>}
     </motion.div>
   );
 }

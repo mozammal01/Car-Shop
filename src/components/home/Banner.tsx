@@ -1,5 +1,6 @@
 "use client";
 import bannerImg from "@/../public/banner/background.jpg";
+import searctBar from "@/../public/banner/search.png"
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -12,6 +13,8 @@ import CoupeCarIcon from "../icons/coupeCarIcon";
 import HybridCarIcon from "../icons/hybridCarIcon";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Banner() {
   const [cat, setCat] = useState("All");
@@ -46,47 +49,12 @@ export default function Banner() {
         </div>
 
         {/* Search */}
+        <Link href="/vehicles">
+        
         <div className="flex lg:flex-row flex-col space-x-4 space-y-2 py-4 bg-white rounded lg:rounded-full p-2 px-6 text-primary font-semibold">
-          <Select>
-            <SelectTrigger className="w-[180px] border-none">
-              <SelectValue placeholder="Any Makes" className="placeholder:text-primary" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
-            </SelectContent>
-          </Select>
-          <hr className="border-1 h-full border-gray-300" />
-          {/*  */}
-          <Select>
-            <SelectTrigger className="w-[180px] border-none">
-              <SelectValue placeholder="Any Models" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
-            </SelectContent>
-          </Select>
-          <hr className="border-1 h-full border-gray-300" />
-          <Select>
-            <SelectTrigger className="w-[180px] border-none">
-              <SelectValue placeholder="All Prices" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
-            </SelectContent>
-          </Select>
-          <div className="flex items-center justify-center gap-6">
-            <Button className="bg-primary text-white w-[150px] rounded-full font-medium transition-colors duration-200">
-              <SearchIcon />
-              Search Cars
-            </Button>
-          </div>
+          <Image src={searctBar} alt="search" width={850} height={200} />
         </div>
+        </Link>
         <p>Or Browse Featured Model</p>
 
         {/* Browse Featured Model */}

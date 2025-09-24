@@ -301,6 +301,6 @@ export const cars = [
     price: "$25,000",
     category: "Sale",
     brand: "Audi",
-    condition: "Used",
+    condition: "New",
   },
 ];

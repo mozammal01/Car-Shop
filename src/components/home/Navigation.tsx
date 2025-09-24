@@ -40,46 +40,41 @@ export default function Navigation() {
     {
       href: "/",
       label: "Home",
-      hasDropdown: true,
-      dropdownItems: [
-        { href: "/home/v2", label: "Home v2" },
-        { href: "/home/v3", label: "Home v3" },
-      ],
+      hasDropdown: false
     },
     {
-      href: "/listings",
+      href: "#vehicles",
       label: "Listings",
       hasDropdown: true,
       dropdownItems: [
-        { href: "/listings/new-cars", label: "New Cars" },
-        { href: "/listings/used-cars", label: "Used Cars" },
-        { href: "/listings/luxury-cars", label: "Luxury Cars" },
-        { href: "/listings/electric-cars", label: "Electric Cars" },
+        { href: "#vehicles", label: "New Cars" },
+        { href: "#vehicles", label: "Used Cars" },
+        { href: "#vehicles", label: "Luxury Cars" },
+        { href: "#vehicles", label: "Electric Cars" },
       ],
     },
     {
-      href: "/blog",
+      href: "#blog",
       label: "Blog",
       hasDropdown: true,
       dropdownItems: [
-        { href: "/blog/latest", label: "Latest Posts" },
-        { href: "/blog/reviews", label: "Car Reviews" },
-        { href: "/blog/tips", label: "Buying Tips" },
-        { href: "/blog/news", label: "Industry News" },
+        { href: "#blog", label: "Latest Posts" },
+        { href: "#blog", label: "Car Reviews" },
+        { href: "#blog", label: "Buying Tips" },
+        { href: "#blog", label: "Industry News" },
       ],
     },
     {
-      href: "/pages",
+      href: "",
       label: "Pages",
       hasDropdown: true,
       dropdownItems: [
-        { href: "/pages/financing", label: "Financing" },
-        { href: "/pages/insurance", label: "Insurance" },
-        { href: "/pages/services", label: "Services" },
-        { href: "/pages/faq", label: "FAQ" },
+        { href: "/brands", label: "brands" },
+        { href: "/vehicles", label: "vehicles" },
+        { href: "/contact", label: "contact" }
       ],
     },
-    { href: "/about", label: "About", hasDropdown: false },
+    { href: "/contact", label: "About", hasDropdown: false },
     { href: "/contact", label: "Contact", hasDropdown: false },
   ];
 
@@ -103,8 +98,8 @@ export default function Navigation() {
 
           {/* Right Side - Sign In & CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            {navLinks.map((link) => (
-              <div key={link.href} className="relative group">
+            {navLinks.map((link, i) => (
+              <div key={i} className="relative group">
                 {link.hasDropdown ? (
                   <div className="relative">
                     <button
@@ -120,9 +115,9 @@ export default function Navigation() {
                     {/* Dropdown Menu */}
                     {activeDropdown === link.label && (
                       <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50">
-                        {link.dropdownItems?.map((item) => (
+                        {link.dropdownItems?.map((item, i) => (
                           <Link
-                            key={item.href}
+                            key={i}
                             href={item.href}
                             className="block px-4 py-2 text-sm hover:bg-gray-50 text-primary font-medium transition-colors duration-200"
                             onClick={() => setActiveDropdown(null)}
@@ -180,8 +175,8 @@ export default function Navigation() {
           )}
         >
           <div className="py-4 space-y-2">
-            {navLinks.map((link) => (
-              <div key={link.href} className="px-4">
+            {navLinks.map((link, i) => (
+              <div key={i} className="px-4">
                 {link.hasDropdown ? (
                   <div>
                     <button
@@ -198,9 +193,9 @@ export default function Navigation() {
                     </button>
                     {activeDropdown === `mobile-${link.label}` && (
                       <div className="pl-4 py-2 space-y-2">
-                        {link.dropdownItems?.map((item) => (
+                        {link.dropdownItems?.map((item, i) => (
                           <Link
-                            key={item.href}
+                            key={i}
                             href={item.href}
                             className="block py-2 text-sm text-gray-600 hover:text-primary transition-colors duration-200"
                             onClick={() => {

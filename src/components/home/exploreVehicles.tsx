@@ -17,7 +17,7 @@ export default function ExploreVehicles() {
   const doubleFilteredCars = filteredCars.filter((car) => car.condition === selectedCategory);
 
   return (
-    <div className="max-w-[1600px] mx-auto py-20 px-4">
+    <div className="max-w-[1600px] mx-auto py-20 px-4" id="vehicles">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: -100 }}
