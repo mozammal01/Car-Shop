@@ -2,18 +2,39 @@ import amyWalker from "@/../public/vehicles/author/author.jpg";
 import { Facebook, MapPinIcon, InstagramIcon, MailIcon, PhoneIcon, FacebookIcon, TwitterIcon } from "lucide-react";
 import Image from "next/image";
 import ContactForm from "./ContactForm";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Contact() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+      transition={{ duration: 0.5 }}
+    >
       <h4 className="text-2xl font-bold uppercase mb-8">Contacts</h4>
       <hr />
       <div className="grid grid-cols-1 2xl:grid-cols-8 gap-4 my-10">
-        <div className="xl:col-span-2 col-span-1">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+          transition={{ duration: 0.5 , delay: 0.2 }}
+          className="xl:col-span-2 col-span-1"
+        >
           <Image src={amyWalker} alt="Amy Walker" width={300} height={300} className="rounded-md" />
-        </div>
+        </motion.div>
         {/*  */}
-        <div className="col-span-4 p-4">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+          transition={{ duration: 0.5 , delay: 0.4 }}
+          className="col-span-4 p-4"
+        >
           <div className="flex flex-col gap-2 font-semibold uppercase mb-4">
             <h4 className="text-2xl font-bold">Amy Walker </h4>
             <span>View My Office</span>
@@ -50,13 +71,19 @@ export default function Contact() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         {/*  */}
-        <div className="col-span-2">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+          transition={{ duration: 0.5 , delay: 0.6 }}
+          className="col-span-2"
+        >
           <ContactForm />
           {/* <ContactForm contactName="Amy Walker" /> */}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }

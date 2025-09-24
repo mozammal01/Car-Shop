@@ -1,16 +1,47 @@
-import {Share2 } from "lucide-react";
+"use client";
+import { Share2 } from "lucide-react";
 import ImageSection from "./ImageSection";
 import { VehiclesDetailsProps } from "@/interfaces/shared-interfaces";
 import Contact from "@/components/contact/Contact";
 import Details from "./Details";
 import Features from "./Features";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
-export default function VehiclesDetails({ title, subTitle, year, location, price, date, views, fulldescription, carId, manufacturer, model, transmission, typeOfDrive, fuel, engine, enginePower, enginePower2, mileage, features, img }: VehiclesDetailsProps) {
+export default function VehiclesDetails({
+  title,
+  subTitle,
+  year,
+  location,
+  price,
+  date,
+  views,
+  fulldescription,
+  carId,
+  manufacturer,
+  model,
+  transmission,
+  typeOfDrive,
+  fuel,
+  engine,
+  enginePower,
+  enginePower2,
+  mileage,
+  features,
+  img,
+}: VehiclesDetailsProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <div className="container mx-auto p-4">
-      <ImageSection img={img}/>
+      <ImageSection img={img} />
       {/*  */}
-      <div>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="my-20 lg:flex items-center justify-between">
           {/* Left Side */}
           <div className="flex flex-col gap-4 my-10">
@@ -49,9 +80,20 @@ export default function VehiclesDetails({ title, subTitle, year, location, price
         <div>
           <p className="text-gray-500 text-xl">{fulldescription}</p>
         </div>
-      </div>
+      </motion.div>
       {/* Details */}
-      <Details carId={carId} manufacturer={manufacturer} model={model} transmission={transmission} typeOfDrive={typeOfDrive} fuel={fuel} engine={engine} enginePower={enginePower} enginePower2={enginePower2} mileage={mileage} />
+      <Details
+        carId={carId}
+        manufacturer={manufacturer}
+        model={model}
+        transmission={transmission}
+        typeOfDrive={typeOfDrive}
+        fuel={fuel}
+        engine={engine}
+        enginePower={enginePower}
+        enginePower2={enginePower2}
+        mileage={mileage}
+      />
       {/* Features */}
       <Features features={features} />
       {/* Contacts */}
