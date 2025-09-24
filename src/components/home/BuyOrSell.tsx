@@ -19,6 +19,7 @@ export default function BuyOrSell() {
             title="Are You Looking For a Car ?"
             description="We are committed to providing our customers with exceptional service."
             buy={true}
+            
           />
         </motion.div>
         <motion.div

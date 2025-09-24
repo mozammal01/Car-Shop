@@ -59,6 +59,7 @@ export interface PopularCardProps {
   gearText: string;
   price: string;
   category?: string;
+  id: number;
 }
 
 export interface BlogCardProps {

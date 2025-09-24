@@ -10,7 +10,7 @@ import SavedIcon from "../icons/savedIcon";
 import { cn } from "@/lib/utils";
 import { PopularCardProps } from "@/interfaces/shared-interfaces";
 
-export default function PopularCard({ imgSrc, title, description, meterText, fuelText, gearText, price, category }: PopularCardProps) {
+export default function PopularCard({ imgSrc, title, description, meterText, fuelText, gearText, price, category, id }: PopularCardProps) {
 
   return (
     <div className="xl:w-[650px] xl:h-[270px] bg-[#272f4d69] shadow-md rounded-md rounded-t-2xl lg:flex items-center">
@@ -42,7 +42,7 @@ export default function PopularCard({ imgSrc, title, description, meterText, fue
         <hr />
         <div className="flex justify-between items-center my-4">
           <span className="text-2xl font-bold me-20">{price}</span>
-          <ExploreArrow href="/cars" text="View Details" />
+          <ExploreArrow href={`/vehicles/${id}`} text="View Details" />
         </div>
       </div>
     </div>

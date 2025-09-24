@@ -1,3 +1,4 @@
+"use client";
 import amyWalker from "@/../public/vehicles/author/author.jpg";
 import { Facebook, MapPinIcon, InstagramIcon, MailIcon, PhoneIcon, FacebookIcon, TwitterIcon } from "lucide-react";
 import Image from "next/image";

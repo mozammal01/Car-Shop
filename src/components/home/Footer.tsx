@@ -33,7 +33,7 @@ export default function Footer() {
             className="relative"
           >
             <Input type="email" placeholder="Enter your email" className="bg-[#ffffff23] border-none rounded-full px-8 py-8 md:w-sm" />
-            <Button className="rounded-full absolute right-8 top-1/2 -translate-y-1/2">Sign Up</Button>
+            <Button className="rounded-full absolute right-8 top-1/2 -translate-y-1/2 cursor-pointer">Sign Up</Button>
           </motion.div>
         </div>
         {/*  */}
