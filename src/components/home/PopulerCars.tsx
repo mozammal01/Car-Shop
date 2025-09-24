@@ -10,7 +10,7 @@ import ford21 from "@/../public/vehicles/Ford-2021.png";
 import ford23 from "@/../public/vehicles/Ford-2023.png";
 import glc from "@/../public/vehicles/GLC.png";
 import { useRef, useState, useMemo } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 
 export default function PopulerCars() {
   const ref = useRef(null);
@@ -110,7 +110,7 @@ export default function PopulerCars() {
           >
             Popular Makes
           </motion.h2>
-          <ExploreArrow href="/popularCars" text="View All" />
+          <ExploreArrow href="/vehicles" text="View All" />
         </div>
         <Category
           category1="Audi"
@@ -129,9 +129,23 @@ export default function PopulerCars() {
           transition={{ duration: 0.5 }}
           className="grid grid-cols-1 xl:grid-cols-2 gap-8 my-12"
         >
-          {filteredCars.map((car) => (
-            <PopularCard key={car.id} {...car} />
-          ))}
+          <AnimatePresence mode="wait">
+            {filteredCars.map((car, index) => (
+              <motion.div
+                key={`${selectedCategory}-${car.id}`}
+                initial={{ opacity: 0, x: 50, scale: 0.9 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, x: 50, scale: 0.9 }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.1,
+                  ease: "easeInOut",
+                }}
+              >
+                <PopularCard {...car} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </motion.div>
       </div>
     </div>

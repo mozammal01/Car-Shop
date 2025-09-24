@@ -17,7 +17,6 @@ export default function Category({
   const [internalCat, setInternalCat] = useState(category1);
   const categories = [category1, category2, category3, category4, category5, category6];
 
-  // Use external state if provided, otherwise use internal state
   const currentCategory = selectedCategory !== undefined ? selectedCategory : internalCat;
   const handleCategoryChange = (category: string) => {
     if (onCategoryChange) {

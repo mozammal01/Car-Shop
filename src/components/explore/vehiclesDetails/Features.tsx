@@ -7,23 +7,23 @@ export default function Features({ features }: FeaturesProps) {
       <hr />
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 my-10 text-gray-500">
         <div className="flex items-center gap-2 hover:text-black cursor-pointer">
-          <div className="size-1 bg-red-600 rounded-full"></div>
+          <div className="size-1 bg-primary rounded-full"></div>
           <span>{features[0]}</span>
         </div>
         <div className="flex items-center gap-2 hover:text-black cursor-pointer">
-          <div className="size-1 bg-red-600 rounded-full"></div>
+          <div className="size-1 bg-primary rounded-full"></div>
           <span>{features[1]}</span>
         </div>
         <div className="flex items-center gap-2 hover:text-black cursor-pointer">
-          <div className="size-1 bg-red-600 rounded-full"></div>
+          <div className="size-1 bg-primary rounded-full"></div>
           <span>{features[2]}</span>
         </div>
         <div className="flex items-center gap-2 hover:text-black cursor-pointer">
-          <div className="size-1 bg-red-600 rounded-full"></div>
+          <div className="size-1 bg-primary rounded-full"></div>
           <span>{features[3]}</span>
         </div>
         <div className="flex items-center gap-2 hover:text-black cursor-pointer">
-          <div className="size-1 bg-red-600 rounded-full"></div>
+          <div className="size-1 bg-primary rounded-full"></div>
           <span>{features[4]}</span>
         </div>
       </div>

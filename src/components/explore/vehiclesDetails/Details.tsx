@@ -25,12 +25,12 @@ export default function Details({
         {/*  */}
         <div>
           <span className="text-gray-500">Manufacturer: </span>
-          <span className="font-semibold text-red-600">{manufacturer}</span>
+          <span className="font-semibold text-primary">{manufacturer}</span>
         </div>
         {/*  */}
         <div>
           <span className="text-gray-500">Model: </span>
-          <span className="font-semibold text-red-600">{model}</span>
+          <span className="font-semibold text-primary">{model}</span>
         </div>
         {/*  */}
         <div>
