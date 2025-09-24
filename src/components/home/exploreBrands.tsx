@@ -1,6 +1,6 @@
 "use client";
 import ExploreArrow from "../exploreArrow/ExploreArrow";
-import audi from "@/../public/brands/audi.png"
+import audi from "@/../public/brands/audi.png";
 import bmw from "@/../public/brands/bmw.png";
 import ford from "@/../public/brands/ford.png";
 import mercedes from "@/../public/brands/mercedes.png";
@@ -22,10 +22,13 @@ export default function ExploreBrands() {
         transition={{ duration: 0.5 }}
         className="container mx-auto py-20 px-4"
       >
-        <div className="flex items-center justify-between">
-          <h2 className="md:text-4xl text-2xl font-bold">Explore Our Premium Brands</h2>
-          <ExploreArrow href="/brands" text="Explore All Brands" />
-        </div>
+        <ExploreArrow
+          href="/brands"
+          titleClassName="md:text-4xl text-2xl font-bold"
+          title="Explore Brands"
+          arrowText="Explore All Brands"
+        />
+
         <div className="md:flex grid grid-cols-2 items-center my-10 gap-4 justify-center">
           {/* Audi */}
           <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">

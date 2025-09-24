@@ -5,23 +5,31 @@ import audiA6 from "@/../public/popular/AUDI-A6.png";
 import GearIcon from "../icons/gearIcon";
 import FuelIcon from "../icons/fuelIcon";
 import MeterIcon from "../icons/meterIcon";
-import ExploreArrow from "../exploreArrow/ExploreArrow"
+import ExploreArrow from "../exploreArrow/ExploreArrow";
 import SavedIcon from "../icons/savedIcon";
 import { cn } from "@/lib/utils";
 import { PopularCardProps } from "@/interfaces/shared-interfaces";
 
 export default function PopularCard({ imgSrc, title, description, meterText, fuelText, gearText, price, category, id }: PopularCardProps) {
-
   return (
     <div className="xl:w-[650px] xl:h-[270px] bg-[#272f4d69] shadow-md rounded-md rounded-t-2xl lg:flex items-center">
       <div className="relative">
-        <Image src={imgSrc} alt="car" width={318} height={270} className="rounded-t-2xl object-cover w-full lg:w-[318px] max-h-[270px]" />
+        <Image src={imgSrc} alt="car" width={400} height={370} className="rounded-t-2xl object-cover w-full min-w-[300px] lg:h-[270px]" />
         <span className="absolute top-4 right-4 bg-white text-black w-9 h-9 rounded-full flex items-center justify-center">
           <SavedIcon size={12} />
         </span>
-        {category && <span className={cn("absolute top-4 left-4 text-white px-2 py-1 rounded-md", category === "Great Price" ? "bg-green-600" : "bg-blue-600")}>{category}</span>}
+        {category && (
+          <span
+            className={cn(
+              "absolute top-4 left-4 text-white px-2 py-1 rounded-md",
+              category === "Great Price" ? "bg-green-600" : "bg-blue-600"
+            )}
+          >
+            {category}
+          </span>
+        )}
       </div>
-      <div className="p-4">
+      <div className="p-4 w-full">
         <h2 className="text-xl font-bold">{title}</h2>
         <p className="pb-1">{description}</p>
         <hr />
@@ -40,11 +48,12 @@ export default function PopularCard({ imgSrc, title, description, meterText, fue
           </div>
         </div>
         <hr />
-        <div className="flex justify-between items-center my-4">
-          <span className="text-2xl font-bold me-20">{price}</span>
-          <ExploreArrow href={`/vehicles/${id}`} text="View Details" />
-        </div>
+        <ExploreArrow href={`/vehicles/${id}`} title={price} arrowText="View Details" className="text-primary" titleClassName="text-xl font-bold" />
+        {/* <div className="flex justify-between items-center my-4">
+          <span className="text-xl font-bold">{price}</span>
+          <ExploreArrow href={`/vehicles/${id}`} text="View Details" className="text-primary" />
+        </div> */}
       </div>
     </div>
-  ); 
+  );
 }

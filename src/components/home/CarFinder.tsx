@@ -9,18 +9,19 @@ export default function CarFinder() {
   const isInView = useInView(ref, { once: true });
   return (
     <div className="container mx-auto px-4 my-20 mb-40">
-      <div className="flex items-center justify-between">
-        <motion.h2
-          ref={ref}
-          initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
-          transition={{ duration: 0.5 }}
-          className="md:text-5xl text-3xl font-bold"
-        >
-          Shop Box Car Your Way
-        </motion.h2>
-        <ExploreArrow href="/carsFinder" text="View More" />
-      </div>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+        transition={{ duration: 0.5 }}
+      >
+        <ExploreArrow
+          href="/carsFinder"
+          titleClassName="md:text-5xl text-3xl font-bold"
+          title="Shop Box Car Your Way"
+          arrowText="View More"
+        />
+      </motion.div>
       <Category category1="New Cars For Sale" category2="Used Cars For Sale" category3="Browse By Type" category4="Browse By Brand" />
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">

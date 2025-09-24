@@ -38,18 +38,14 @@ export default function Blogs() {
   ];
   return (
     <div className="container mx-auto px-4 my-20 mb-40">
-      <div className="flex items-center justify-between">
-        <motion.h2
-          ref={ref}
-          initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
-          transition={{ duration: 0.5 }}
-          className="md:text-4xl text-3xl font-bold"
-        >
-          Latest Blog Posts
-        </motion.h2>
-        <ExploreArrow href="/blogs" text="View All" />
-      </div>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+        transition={{ duration: 0.5 }}
+      >
+        <ExploreArrow href="/blogs" titleClassName="md:text-4xl text-3xl font-bold" title="Latest Blog Posts" arrowText="View All" />
+      </motion.div>
 
       <motion.div
         ref={ref}

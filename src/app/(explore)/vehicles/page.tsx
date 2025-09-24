@@ -7,7 +7,7 @@ export default function VehiclesPage() {
         <h2 className="md:text-6xl text-4xl font-bold mb-4">Vehicles</h2>
         <p className="text-xl font-semibold">Explore our premium Vehicles</p>
       </div>
-      <div className="container mx-auto">
+      <div className="container mx-auto pb-10">
         <Vehicles />
       </div>
     </>

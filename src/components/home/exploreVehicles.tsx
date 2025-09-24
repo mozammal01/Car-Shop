@@ -10,65 +10,68 @@ import CarCard from "../card/CarCard";
 import Category from "../category/category";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { cars } from "@/data/cars";
 
 export default function ExploreVehicles() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const cars = [
-    {
-      id: 1,
-      imgSrc: ford21,
-      title: "Ford Transit – 2021",
-      description: "4.0 D5 PowerPulse Momentum 5dr AW…",
-      meterText: "2500 miles",
-      fuelText: "Diesel",
-      gearText: "Manual",
-      price: "$22,000",
-      category: "Great Price",
-    },
-    {
-      id: 2,
-      imgSrc: glc,
-      title: "New GLC - 2023",
-      description: "4.0 D5 PowerPulse Momentum 5dr AW…",
-      meterText: "50 miles",
-      fuelText: "Petrol",
-      gearText: "Automatic",
-      price: "$95,000",
-      category: "Low Mileage",
-    },
-    {
-      id: 3,
-      imgSrc: audi,
-      title: "Audi A6 3.5 - New",
-      description: "3.5 D5 PowerPulse Momentum 5dr AW…",
-      meterText: "100 miles",
-      fuelText: "Petrol",
-      gearText: "Automatic",
-      price: "$58,000",
-    },
-    {
-      id: 4,
-      imgSrc: corolla,
-      title: "Corolla Altis – 2023",
-      description: "3.5 D5 PowerPulse Momentum 5dr AW…",
-      meterText: "15000 miles",
-      fuelText: "Petrol",
-      gearText: "CVT",
-      price: "$45,000",
-    },
-    {
-      id: 5,
-      imgSrc: ford23,
-      title: "Ford Transit – 2023",
-      description: "3.5 D5 PowerPulse Momentum 5dr AW…",
-      meterText: "10 miles",
-      fuelText: "Diesel",
-      gearText: "Manual",
-      price: "$35,000",
-      category: "Great Price",
-    },
-  ];
+  const filteredCars = cars.filter((car) => car.id <= 4);
+  console.log(filteredCars)
+  // const cars = [
+  //   {
+  //     id: 1,
+  //     imgSrc: ford21,
+  //     title: "Ford Transit – 2021",
+  //     description: "4.0 D5 PowerPulse Momentum 5dr AW…",
+  //     meterText: "2500 miles",
+  //     fuelText: "Diesel",
+  //     gearText: "Manual",
+  //     price: "$22,000",
+  //     category: "Great Price",
+  //   },
+  //   {
+  //     id: 2,
+  //     imgSrc: glc,
+  //     title: "New GLC - 2023",
+  //     description: "4.0 D5 PowerPulse Momentum 5dr AW…",
+  //     meterText: "50 miles",
+  //     fuelText: "Petrol",
+  //     gearText: "Automatic",
+  //     price: "$95,000",
+  //     category: "Low Mileage",
+  //   },
+  //   {
+  //     id: 3,
+  //     imgSrc: audi,
+  //     title: "Audi A6 3.5 - New",
+  //     description: "3.5 D5 PowerPulse Momentum 5dr AW…",
+  //     meterText: "100 miles",
+  //     fuelText: "Petrol",
+  //     gearText: "Automatic",
+  //     price: "$58,000",
+  //   },
+  //   {
+  //     id: 4,
+  //     imgSrc: corolla,
+  //     title: "Corolla Altis – 2023",
+  //     description: "3.5 D5 PowerPulse Momentum 5dr AW…",
+  //     meterText: "15000 miles",
+  //     fuelText: "Petrol",
+  //     gearText: "CVT",
+  //     price: "$45,000",
+  //   },
+  //   {
+  //     id: 5,
+  //     imgSrc: ford23,
+  //     title: "Ford Transit – 2023",
+  //     description: "3.5 D5 PowerPulse Momentum 5dr AW…",
+  //     meterText: "10 miles",
+  //     fuelText: "Diesel",
+  //     gearText: "Manual",
+  //     price: "$35,000",
+  //     category: "Great Price",
+  //   },
+  // ];
   return (
     <div className="max-w-[1600px] mx-auto py-20 px-4">
       <motion.div
@@ -76,10 +79,9 @@ export default function ExploreVehicles() {
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
         transition={{ duration: 0.5 }}
-        className="flex items-center justify-between container mx-auto"
+        className="container mx-auto"
       >
-        <h2 className="md:text-4xl text-3xl font-bold">Explore All Vehicles</h2>
-        <ExploreArrow href="/vehicles" text="View All" />
+        <ExploreArrow href="/vehicles" titleClassName="md:text-4xl text-3xl font-bold" title="Explore Vehicles" arrowText="View All" />
       </motion.div>
       <div className="flex space-x-4 font-semibold container mx-auto">
         <Category category1="In Stock" category2="New Cars" category3="Used Cars" />
@@ -89,9 +91,9 @@ export default function ExploreVehicles() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
         transition={{ duration: 0.5 }}
-        className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-4 container mx-auto"
+        className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-8 container mx-auto"
       >
-        {cars.map((car) => (
+        {filteredCars.map((car) => (
           <CarCard
             key={car.id}
             id={car.id}

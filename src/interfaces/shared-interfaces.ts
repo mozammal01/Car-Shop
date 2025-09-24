@@ -9,9 +9,11 @@ export interface NavButton {
   menuItem4: string;
 }
 export interface ExploreArrowProps {
-  text: string;
+  arrowText: string;
   className?: string;
   href: string;
+  title?: string;
+  titleClassName?: string;
 }
 
 import { StaticImageData } from "next/image";

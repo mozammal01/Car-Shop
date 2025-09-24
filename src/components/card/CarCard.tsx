@@ -15,7 +15,16 @@ export default function CarCard({ imgSrc, title, description, meterText, fuelTex
         <span className="absolute top-4 right-4 bg-white text-black w-9 h-9 rounded-full flex items-center justify-center">
           <SavedIcon size={12} />
         </span>
-        {category && <span className={cn("absolute top-4 left-4 text-white px-2 py-1 rounded-md", category === "Great Price" ? "bg-green-600" : "bg-blue-600")}>{category}</span>}
+        {category && (
+          <span
+            className={cn(
+              "absolute top-4 left-4 text-white px-2 py-1 rounded-md",
+              category === "Great Price" ? "bg-green-600" : "bg-blue-600"
+            )}
+          >
+            {category}
+          </span>
+        )}
       </div>
       <div className="p-4">
         <h2 className="text-xl font-bold">{title}</h2>
@@ -36,9 +45,14 @@ export default function CarCard({ imgSrc, title, description, meterText, fuelTex
           </div>
         </div>
         <hr />
-        <div className="flex justify-between items-center my-4">
-          <span className="text-2xl font-bold">{price}</span>
-          <ExploreArrow href={`/vehicles/${id}`} text="View Details" className="text-primary" />
+        <div className="my-4">
+          <ExploreArrow
+            href={`/vehicles/${id}`}
+            titleClassName="text-2xl font-bold"
+            title={price}
+            arrowText="View Details"
+            className="text-primary"
+          />
         </div>
       </div>
     </div>
