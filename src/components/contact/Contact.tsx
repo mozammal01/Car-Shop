@@ -8,12 +8,12 @@ export default function Contact() {
     <div>
       <h4 className="text-2xl font-bold uppercase mb-8">Contacts</h4>
       <hr />
-      <div className="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-8 gap-4 my-10">
+      <div className="grid grid-cols-1 2xl:grid-cols-8 gap-4 my-10">
         <div className="xl:col-span-2 col-span-1">
           <Image src={amyWalker} alt="Amy Walker" width={300} height={300} className="rounded-md" />
         </div>
         {/*  */}
-        <div className="xl:col-span-4 col-span-2 p-4">
+        <div className="col-span-4 p-4">
           <div className="flex flex-col gap-2 font-semibold uppercase mb-4">
             <h4 className="text-2xl font-bold">Amy Walker </h4>
             <span>View My Office</span>
@@ -52,7 +52,7 @@ export default function Contact() {
           </div>
         </div>
         {/*  */}
-        <div className="xl:col-span-2 col-span-1">
+        <div className="col-span-2">
           <ContactForm />
           {/* <ContactForm contactName="Amy Walker" /> */}
         </div>

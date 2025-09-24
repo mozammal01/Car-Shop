@@ -18,8 +18,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between my-10 px-4">
           <motion.div
             ref={ref}
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 100 }}
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
             transition={{ duration: 0.5 }}
           >
             <h4 className="text-2xl font-semibold">Join CarHut</h4>
@@ -27,8 +27,8 @@ export default function Footer() {
           </motion.div>
           <motion.div
             ref={ref}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 100 }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
             transition={{ duration: 0.5 }}
             className="relative"
           >

@@ -18,8 +18,8 @@ export default function SellUs() {
           {/* Image Section */}
           <motion.div
             ref={ref}
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 100 }}
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
             transition={{ duration: 0.5 }}
             className="w-full lg:w-auto flex justify-center lg:justify-start"
           >
@@ -33,8 +33,8 @@ export default function SellUs() {
           {/* Content Section */}
           <motion.div
             ref={ref}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 100 }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
             transition={{ duration: 0.5 }}
             className="w-full lg:w-[865px] 2xl:bg-[#EEF1FB] p-6 md:p-12 lg:p-20 lg:px-40 flex flex-col justify-center space-y-6 md:space-y-8 min-h-[400px] lg:h-[684px]"
           >

@@ -12,12 +12,6 @@ import kia from "@/../public/brands/kia.png";
 import chevrolet from "@/../public/brands/chevrolet.png";
 import porsche from "@/../public/brands/porsche.png";
 import volkswagen from "@/../public/brands/volkswagen.png";
-import tesla from "@/../public/brands/tesla.png";
-import volvo from "@/../public/brands/volvo.png";
-import mazda from "@/../public/brands/mazda.png";
-import renault from "@/../public/brands/renault.png";
-import peugeot from "@/../public/brands/peugeot.png";
-import jeep from "@/../public/brands/jeep.png";
 
 const brands = [
   { name: "Toyota", logo: toyota },
@@ -39,7 +33,7 @@ const brands = [
 
 export default function Brands() {
   return (
-    <div className="grid grid-cols-3 gap-20 p-6 container mx-auto">
+    <div className="grid lg:grid-cols-3 grid-cols-2 gap-20 p-6 container mx-auto">
       {brands.map((brand, i) => (
         <div key={i} className=" bg-white rounded-md shadow-xl p-4 flex items-center justify-center flex-col">
           <Image

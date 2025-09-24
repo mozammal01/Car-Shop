@@ -46,10 +46,10 @@ export default function Banner() {
         </div>
 
         {/* Search */}
-        <div className="flex md:flex-row flex-col space-x-4 space-y-2 py-4  bg-white rounded md:rounded-full p-2 px-6 text-primary font-semibold">
+        <div className="flex lg:flex-row flex-col space-x-4 space-y-2 py-4 bg-white rounded lg:rounded-full p-2 px-6 text-primary font-semibold">
           <Select>
             <SelectTrigger className="w-[180px] border-none">
-              <SelectValue placeholder="Any Makes" />
+              <SelectValue placeholder="Any Makes" className="placeholder:text-primary" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="light">Light</SelectItem>

@@ -29,7 +29,7 @@ export default function Testimonial() {
   const isInView = useInView(ref, { once: true });
   return (
     <div className="bg-slate-50 md:h-[800px] h-full my-20">
-      <div className="container mx-auto md:p-20 p-4">
+      <div className="md:container mx-auto w-[400px] md:p-20 p-4">
         <div className="flex items-center justify-between">
           <motion.h2
             ref={ref}

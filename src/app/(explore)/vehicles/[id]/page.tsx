@@ -1,4 +1,7 @@
 import audi from "@/../public/vehicles/Audi.png";
+import audiA4 from "@/../public/popular/AUDI-A4.png";
+import audiA5 from "@/../public/popular/AUDI-A5.png";
+
 import audi1 from "@/../public/vehicles/audi/audi1.jpg";
 import audi2 from "@/../public/vehicles/audi/audi2.jpg";
 import audi3 from "@/../public/vehicles/audi/audi3.jpg";
@@ -221,6 +224,79 @@ export default function VehiclePage({ params }: { params: { id: string } }) {
       price: "$22,000",
       category: "Great Price",
     },
+    // 6
+    {
+      id: 6,
+      imgSrc: audiA4,
+      img: [audi1, audi2, audi3, audi4, audi5],
+      title: "Audi A4",
+      subTitle: "Sedan, Luxury",
+      year: "2024",
+      location: "Ingolstadt",
+      description: "Audi A4 is a luxury car",
+      fullDescription: "Audi A4 is a luxury car",
+      meterText: "10000 miles",
+      date: "Feb 13, 2024",
+      views: "695 views",
+      carId: "aud-a4-24",
+      manufacturer: "Audi",
+      model: "A4",
+      transmission: "Automatic",
+      typeOfDrive: "Quattro® All-wheel drive",
+      fuel: "Gasoline",
+      engine: "Electric",
+      enginePower: "340 horses",
+      enginePower2: "260 kilowatts",
+      mileage: "500 ml",
+      features: [
+        "Adaptive Air Suspension",
+        "Bang & Olufsen® Sound System",
+        "Digital Cockpit Plus",
+        "Matrix LED Headlights",
+        "Parking System Plus",
+      ],
+      fuelText: "Petrol",
+      gearText: "Automatic",
+      price: "$10000",
+      category: "Sale",
+      brand: "Audi",
+    },
+    {
+      id: 7,
+      imgSrc: audiA5,
+      img: [audi1, audi2, audi3, audi4, audi5],
+      title: "Audi A5",
+      subTitle: "Sedan, Luxury",
+      year: "2024",
+      location: "Ingolstadt",
+      description: "Audi A5 is a luxury car",
+      fullDescription: "Audi A5 is a luxury car",
+      meterText: "10000 miles",
+      date: "Feb 13, 2024",
+      views: "695 views",
+      carId: "aud-a5-24",
+      manufacturer: "Audi",
+      model: "A5",
+      transmission: "Automatic",
+      typeOfDrive: "Quattro® All-wheel drive",
+      fuel: "Gasoline",
+      engine: "Electric",
+      enginePower: "340 horses",
+      enginePower2: "260 kilowatts",
+      mileage: "500 ml",
+      features: [
+        "Adaptive Air Suspension",
+        "Bang & Olufsen® Sound System",
+        "Digital Cockpit Plus",
+        "Matrix LED Headlights",
+        "Parking System Plus",
+      ],
+      fuelText: "Petrol",
+      gearText: "Automatic",
+      price: "$10000",
+      category: "Sale",
+      brand: "Audi",
+    },
   ];
   
   const car = cars.find((c) => c.id === parseInt(params.id));
@@ -248,7 +324,7 @@ export default function VehiclePage({ params }: { params: { id: string } }) {
           price={car.price}
           date={car.date}
           views={car.views}
-          description={car.description}
+          fulldescription={car.fullDescription}
           carId={car.carId}
           manufacturer={car.manufacturer}
           model={car.model}

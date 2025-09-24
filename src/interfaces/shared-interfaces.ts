@@ -35,7 +35,7 @@ export interface VehiclesDetailsProps {
   price: string;
   date: string;
   views: string;
-  description: string;
+  fulldescription: string;
   carId: string;
   manufacturer: string;
   model: string;
@@ -99,6 +99,8 @@ export interface CategoryProps {
   category5?: string;
   category6?: string;
   className?: string;
+  selectedCategory?: string;
+  onCategoryChange?: (category: string) => void;
 }
 
 export interface FeedbackProps {

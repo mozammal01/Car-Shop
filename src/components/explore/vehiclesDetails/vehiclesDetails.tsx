@@ -5,17 +5,17 @@ import Contact from "@/components/contact/Contact";
 import Details from "./Details";
 import Features from "./Features";
 
-export default function VehiclesDetails({ title, subTitle, year, location, price, date, views, description, carId, manufacturer, model, transmission, typeOfDrive, fuel, engine, enginePower, enginePower2, mileage, features, img }: VehiclesDetailsProps) {
+export default function VehiclesDetails({ title, subTitle, year, location, price, date, views, fulldescription, carId, manufacturer, model, transmission, typeOfDrive, fuel, engine, enginePower, enginePower2, mileage, features, img }: VehiclesDetailsProps) {
   return (
     <div className="container mx-auto p-4">
       <ImageSection img={img}/>
       {/*  */}
       <div>
-        <div className="my-20 flex items-center justify-between">
+        <div className="my-20 lg:flex items-center justify-between">
           {/* Left Side */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 my-10">
             <div className="flex items-end gap-2 uppercase">
-              <h3 className="text-5xl font-bold">{title}</h3>
+              <h3 className="xl:text-5xl text-3xl font-bold">{title}</h3>
               <span className="font-bold bg-primary text-white px-6 py-1 rounded">For Sale</span>
             </div>
             <div className="flex items-center gap-2">
@@ -47,7 +47,7 @@ export default function VehiclesDetails({ title, subTitle, year, location, price
         </div>
         {/*  */}
         <div>
-          <p className="text-gray-500 text-xl">{description}</p>
+          <p className="text-gray-500 text-xl">{fulldescription}</p>
         </div>
       </div>
       {/* Details */}

@@ -1,4 +1,6 @@
 "use client";
+import audiA4 from "@/../public/popular/AUDI-A4.png";
+import audiA5 from "@/../public/popular/AUDI-A5.png";
 import audi from "@/../public/vehicles/Audi.png";
 import ford21 from "@/../public/vehicles/Ford-2021.png";
 import ford23 from "@/../public/vehicles/Ford-2023.png";
@@ -64,29 +66,53 @@ export default function Vehicles() {
       price: "$35,000",
       category: "Great Price",
     },
+    {
+      id: 6,
+      imgSrc: audiA4,
+      title: "Audi A4",
+      description: "Audi A4 is a luxury car",
+      meterText: "10000 miles",
+      fuelText: "Petrol",
+      gearText: "Automatic",
+      price: "$10000",
+      category: "Sale",
+      brand: "Audi",
+    },
+    {
+      id: 7,
+      imgSrc: audiA5,
+      title: "Audi A5",
+      description: "Audi A5 is a luxury car",
+      meterText: "10000 miles",
+      fuelText: "Petrol",
+      gearText: "Automatic",
+      price: "$10000",
+      category: "Sale",
+      brand: "Audi",
+    },
   ];
   return (
     <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
-        transition={{ duration: 0.5 }}
-        className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-10"
-      >
-        {cars.map((car) => (
-          <CarCard
-            key={car.id}
-            id={car.id}
-            imgSrc={car.imgSrc}
-            title={car.title}
-            description={car.description}
-            meterText={car.meterText}
-            fuelText={car.fuelText}
-            gearText={car.gearText}
-            price={car.price}
-            category={car.category}
-          />
-        ))}
-      </motion.div>
+      ref={ref}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+      transition={{ duration: 0.5 }}
+      className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-10"
+    >
+      {cars.map((car) => (
+        <CarCard
+          key={car.id}
+          id={car.id}
+          imgSrc={car.imgSrc}
+          title={car.title}
+          description={car.description}
+          meterText={car.meterText}
+          fuelText={car.fuelText}
+          gearText={car.gearText}
+          price={car.price}
+          category={car.category}
+        />
+      ))}
+    </motion.div>
   );
 }

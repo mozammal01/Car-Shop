@@ -11,8 +11,8 @@ export default function BuyOrSell() {
       <div className="xl:flex items-center justify-between">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 100 }}
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
           transition={{ duration: 0.5 }}
         >
           <BuyOrSellCard
@@ -23,8 +23,8 @@ export default function BuyOrSell() {
         </motion.div>
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 100 }}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
           transition={{ duration: 0.5 }}
         >
           <BuyOrSellCard
