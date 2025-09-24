@@ -7,7 +7,7 @@ import audi2 from "@/../public/vehicles/audi/audi2.jpg";
 import audi3 from "@/../public/vehicles/audi/audi3.jpg";
 import audi4 from "@/../public/vehicles/audi/audi4.jpg";
 import audi5 from "@/../public/vehicles/audi/audi6.jpg";
-// 
+//
 import ford21 from "@/../public/vehicles/Ford-2021.png";
 import ford211 from "@/../public/vehicles/ford21/ford1.jpg";
 import ford212 from "@/../public/vehicles/ford21/ford2.jpg";
@@ -119,6 +119,38 @@ export const cars = [
   // 3
   {
     id: 3,
+    imgSrc: corolla,
+    img: [corolla1, corolla2, corolla3, corolla4, corolla5],
+    title: "Corolla Altis – 2023",
+    subTitle: "Sedan, Compact",
+    year: "2023",
+    location: "Global",
+    description: "3.5 D5 PowerPulse Momentum 5dr AW…",
+    fullDescription:
+      "The Toyota Corolla Altis is a global benchmark for reliability, fuel efficiency, and value. Renowned for its comfortable ride, practical interior, and advanced safety features, it is designed to meet the everyday needs of drivers and families alike. It combines a timeless design with modern technology to deliver a dependable and economical driving experience.",
+    meterText: "15000 miles",
+    date: "Feb 13, 2024",
+    views: "905 views",
+    carId: "toy-ct-23",
+    manufacturer: "Toyota",
+    model: "Corolla Altis",
+    transmission: "Automatic",
+    typeOfDrive: "Front-wheel drive",
+    fuel: "Petrol",
+    engine: "1.8L Dynamic Force Engine",
+    enginePower: "171 horses",
+    enginePower2: "126 kilowatts",
+    mileage: "100,000 ml",
+    features: ["16-inch Alloy Wheels", "Heated seats", "Automatic Climate Control", "Leather seats", "Toyota Safety Sense™ 3.0 (TSS 3.0)"],
+    fuelText: "Petrol",
+    gearText: "CVT",
+    price: "$45,000",
+    brand: "Toyota",
+    condition: "New",
+  },
+  // 4
+  {
+    id: 4,
     imgSrc: audi,
     img: [audi1, audi2, audi3, audi4, audi5],
     title: "Audi A6 3.5 - New",
@@ -153,38 +185,6 @@ export const cars = [
     price: "$58,000",
     brand: "Audi",
     condition: "Used",
-  },
-  // 4
-  {
-    id: 4,
-    imgSrc: corolla,
-    img: [corolla1, corolla2, corolla3, corolla4, corolla5],
-    title: "Corolla Altis – 2023",
-    subTitle: "Sedan, Compact",
-    year: "2023",
-    location: "Global",
-    description: "3.5 D5 PowerPulse Momentum 5dr AW…",
-    fullDescription:
-      "The Toyota Corolla Altis is a global benchmark for reliability, fuel efficiency, and value. Renowned for its comfortable ride, practical interior, and advanced safety features, it is designed to meet the everyday needs of drivers and families alike. It combines a timeless design with modern technology to deliver a dependable and economical driving experience.",
-    meterText: "15000 miles",
-    date: "Feb 13, 2024",
-    views: "905 views",
-    carId: "toy-ct-23",
-    manufacturer: "Toyota",
-    model: "Corolla Altis",
-    transmission: "Automatic",
-    typeOfDrive: "Front-wheel drive",
-    fuel: "Petrol",
-    engine: "1.8L Dynamic Force Engine",
-    enginePower: "171 horses",
-    enginePower2: "126 kilowatts",
-    mileage: "100,000 ml",
-    features: ["16-inch Alloy Wheels", "Heated seats", "Automatic Climate Control", "Leather seats", "Toyota Safety Sense™ 3.0 (TSS 3.0)"],
-    fuelText: "Petrol",
-    gearText: "CVT",
-    price: "$45,000",
-    brand: "Toyota",
-    condition: "New",
   },
   // 5
   {
@@ -235,7 +235,8 @@ export const cars = [
     year: "2024",
     location: "Ingolstadt",
     description: "Audi A4 is a luxury car",
-    fullDescription: "Audi A4 is a luxury car",
+    fullDescription:
+      "The Audi A4 epitomizes sophisticated performance and cutting-edge technology. With its iconic design, luxurious cabin crafted with premium materials, and a powerful yet efficient engine, the A4 delivers a seamless and engaging driving experience. It is equipped with the latest digital interfaces and driver assistance systems, making every journey refined, intelligent, and dynamic.",
     meterText: "10000 miles",
     date: "Feb 13, 2024",
     views: "695 views",
@@ -258,7 +259,7 @@ export const cars = [
     ],
     fuelText: "Petrol",
     gearText: "Automatic",
-    price: "$10000",
+    price: "$22,000",
     category: "Sale",
     brand: "Audi",
     condition: "Used",
@@ -273,7 +274,8 @@ export const cars = [
     year: "2024",
     location: "Ingolstadt",
     description: "Audi A5 is a luxury car",
-    fullDescription: "Audi A5 is a luxury car",
+    fullDescription:
+      "The Audi A5 epitomizes sophisticated performance and cutting-edge technology. With its iconic design, luxurious cabin crafted with premium materials, and a powerful yet efficient engine, the A5 delivers a seamless and engaging driving experience. It is equipped with the latest digital interfaces and driver assistance systems, making every journey refined, intelligent, and dynamic.",
     meterText: "10000 miles",
     date: "Feb 13, 2024",
     views: "695 views",
@@ -296,7 +298,7 @@ export const cars = [
     ],
     fuelText: "Petrol",
     gearText: "Automatic",
-    price: "$10000",
+    price: "$25,000",
     category: "Sale",
     brand: "Audi",
     condition: "Used",

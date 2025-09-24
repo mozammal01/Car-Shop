@@ -13,9 +13,20 @@ export default function Vehicles() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
       transition={{ duration: 0.5 }}
-      className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-10"
+      className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-10 text-center"
     >
-      {cars.map((car) => (
+      {cars.map((car, index) => (
+        <motion.div
+          key={car.id}
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 50, scale: 0.9 }}
+          transition={{
+            duration: 0.4,
+            delay: index * 0.3,
+            ease: "easeInOut",
+          }}
+        >
         <CarCard
           key={car.id}
           id={car.id}
@@ -27,7 +38,8 @@ export default function Vehicles() {
           gearText={car.gearText}
           price={car.price}
           category={car.category}
-        />
+          />
+        </motion.div>
       ))}
     </motion.div>
   );

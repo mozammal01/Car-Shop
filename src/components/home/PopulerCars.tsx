@@ -1,17 +1,10 @@
 "use client";
 import Category from "../category/category";
-import CarCard from "../card/CarCard";
-import audiA4 from "@/../public/popular/AUDI-A4.png";
-import audiA5 from "@/../public/popular/AUDI-A5.png";
-import audiA6 from "@/../public/popular/AUDI-A6.png";
 import PopularCard from "../popularCard/PopularCard";
 import ExploreArrow from "../exploreArrow/ExploreArrow";
-import ford21 from "@/../public/vehicles/Ford-2021.png";
-import ford23 from "@/../public/vehicles/Ford-2023.png";
-import glc from "@/../public/vehicles/GLC.png";
 import { useRef, useState, useMemo } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import  {cars} from "@/data/cars";
+import { cars } from "@/data/cars";
 
 export default function PopulerCars() {
   const ref = useRef(null);
@@ -100,15 +93,14 @@ export default function PopulerCars() {
   return (
     <div className="bg-[#050B20] text-white xl:h-[900px] h-full p-20">
       <div className="container mx-auto">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
-            transition={{ duration: 0.5 }}
-            
-          >
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+          transition={{ duration: 0.5 }}
+        >
           <ExploreArrow href="/vehicles" titleClassName="md:text-5xl text-3xl font-bold" title="Popular Makes" arrowText="View All" />
-          </motion.div>
+        </motion.div>
         <Category
           category1="Audi"
           category2="Ford"
