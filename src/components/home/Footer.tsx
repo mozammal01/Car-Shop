@@ -49,48 +49,48 @@ export default function Footer() {
             <div>
               <h4 className="text-xl font-semibold">Company</h4>
               <ul className="space-y-4 my-6">
-                <li>About Us</li>
-                <li>Blogs</li>
+                <li><Link href="/contact">About Us</Link></li>
+                <li><Link href="/blogs">Blogs</Link></li>
                 <li>FAQ</li>
-                <li>Services</li>
+                <li><Link href="#services">Services</Link></li>
                 <li>Terms</li>
-                <li>Contact Us</li>
+                <li><Link href="/contact">Contact Us</Link></li>
               </ul>
             </div>
             {/*  */}
             <div>
               <h4 className="text-xl font-semibold">Quick Links</h4>
               <ul className="space-y-4 my-6">
-                <li>Home</li>
-                <li>Blogs</li>
+                <li><Link href="#home">Home</Link></li>
+                <li><Link href="/blogs">Blogs</Link></li>
                 <li>FAQ</li>
-                <li>Services</li>
+                <li><Link href="#services">Services</Link></li>
                 <li>Terms</li>
-                <li>Contact Us</li>
+                <li><Link href="/contact">Contact Us</Link></li>
               </ul>
             </div>
             {/*  */}
             <div>
               <h4 className="text-xl font-semibold">Our Brands</h4>
               <ul className="space-y-4 my-6">
-                <li>About Us</li>
-                <li>Blogs</li>
+                <li><Link href="/contact">About Us</Link></li>
+                <li><Link href="/blogs">Blogs</Link></li>
                 <li>FAQ</li>
-                <li>Services</li>
+                <li><Link href="#services">Services</Link></li>
                 <li>Terms</li>
-                <li>Contact Us</li>
+                <li><Link href="/contact">Contact Us</Link></li>
               </ul>
             </div>
             {/*  */}
             <div>
               <h4 className="text-xl font-semibold">Vehicles Types</h4>
               <ul className="space-y-4 my-6">
-                <li>About Us</li>
-                <li>Blogs</li>
+                <li><Link href="/contact">About Us</Link></li>
+                <li><Link href="/blogs">Blogs</Link></li>
                 <li>FAQ</li>
-                <li>Services</li>
+                <li><Link href="#services">Services</Link></li>
                 <li>Terms</li>
-                <li>Contact Us</li>
+                <li><Link href="/contact">Contact Us</Link></li>
               </ul>
             </div>
             {/*  */}

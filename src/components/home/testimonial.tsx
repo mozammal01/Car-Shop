@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 import feedback1 from "@/../public/feedback/test1.png";
+import feedback2 from "@/../public/feedback/test2.jpg";
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from "../ui/carousel";
 
 export default function Testimonial() {
@@ -17,7 +18,7 @@ export default function Testimonial() {
         "I'd suggest Macklin Motors Nissan Glasgow South to a friend because I had great service from my salesman Patrick and all of the team.",
     },
     {
-      img: feedback1,
+      img: feedback2,
       name: "Ali TUFAN",
       job: "Designer",
       rating: "5.0",

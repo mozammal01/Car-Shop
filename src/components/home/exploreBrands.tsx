@@ -1,16 +1,12 @@
 "use client";
 import ExploreArrow from "../exploreArrow/ExploreArrow";
-import audi from "@/../public/brands/audi.png";
-import bmw from "@/../public/brands/bmw.png";
-import ford from "@/../public/brands/ford.png";
-import mercedes from "@/../public/brands/mercedes.png";
-import peugeot from "@/../public/brands/peugeot.png";
-import volkSwegen from "@/../public/brands/volkswagen.png";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { brands } from "@/data/brands";
 
 export default function ExploreBrands() {
+  const filteredBrands = brands.slice(0, 6);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -30,36 +26,23 @@ export default function ExploreBrands() {
         />
 
         <div className="md:flex grid grid-cols-2 items-center my-10 gap-4 justify-center">
-          {/* Audi */}
-          <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">
-            <Image src={audi} alt="audi" width={100} height={100} unoptimized />
-            <span className="text-lg font-bold">Audi</span>
-          </div>
-          {/* BMW */}
-          <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">
-            <Image src={bmw} alt="bmw" width={100} height={100} unoptimized />
-            <span className="text-lg font-bold">BMW</span>
-          </div>
-          {/* Ford */}
-          <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">
-            <Image src={ford} alt="ford" width={100} height={100} unoptimized />
-            <span className="text-lg font-bold">Ford</span>
-          </div>
-          {/* Mercedes */}
-          <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">
-            <Image src={mercedes} alt="mercedes" width={100} height={100} unoptimized />
-            <span className="text-lg font-bold">Mercedes</span>
-          </div>
-          {/* Peugeot */}
-          <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">
-            <Image src={peugeot} alt="peugeot" width={100} height={100} unoptimized />
-            <span className="text-lg font-bold">Peugeot</span>
-          </div>
-          {/* Volk Swegen */}
-          <div className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col">
-            <Image src={volkSwegen} alt="volkSwegen" width={100} height={100} unoptimized />
-            <span className="text-lg font-bold">Volk Swegen</span>
-          </div>
+          {filteredBrands.map((brand, i) => (
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 50, scale: 0.9 }}
+              transition={{
+                duration: 0.4,
+                delay: i * 0.3,
+                ease: "easeInOut",
+              }}
+              key={i}
+              className="w-[200px] h-[180px] bg-white rounded-md p-4 flex items-center justify-center flex-col"
+            >
+              <Image src={brand.logo} alt={brand.name} width={100} height={100} unoptimized />
+              <span className="text-lg font-bold">{brand.name}</span>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
     </div>

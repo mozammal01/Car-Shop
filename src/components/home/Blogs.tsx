@@ -1,41 +1,25 @@
 "use client";
 import BlogCard from "../blogCard/BlogCard";
 import ExploreArrow from "../exploreArrow/ExploreArrow";
-import BMWXB7 from "@/../public/blogs/BMW-XB7.png";
-import BMWX5 from "@/../public/blogs/BMW-X5.png";
-import BMWX6 from "@/../public/blogs/BMW-X6.png";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { blogs } from "@/data/blogs";
+import { usePathname } from "next/navigation";
 
 export default function Blogs() {
+  const [blogsData, setBlogsData] = useState(blogs);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const blogs = [
-    {
-      imgSrc: BMWXB7,
-      title: "Extraordinary",
-      description: "2024 BMW ALPINA XB7 with exclusive details,",
-      date: "December 21, 2021",
-      author: "Admin",
-      category: "Sound",
-    },
-    {
-      imgSrc: BMWX6,
-      title: "sportiest.",
-      description: "BMW X6 M50i is designed to exceed your,",
-      date: "December 21, 2021",
-      author: "Admin",
-      category: "Accessories",
-    },
-    {
-      imgSrc: BMWX5,
-      title: "Sport",
-      description: "BMW X5 Gold 2024 Sport Review: Light on,",
-      date: "December 21, 2021",
-      author: "Admin",
-      category: "Exterior",
-    },
-  ];
+  const location = usePathname();
+  useEffect(() => {
+    if (location === "/blogs") {
+      setBlogsData(blogs);
+    } else {
+      const filteredBlogs = blogs.slice(0, 3);
+      setBlogsData(filteredBlogs);
+    }
+  }, [location]);
+
   return (
     <div className="container mx-auto px-4 my-20 mb-40" id="blog">
       <motion.div
@@ -44,7 +28,7 @@ export default function Blogs() {
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
         transition={{ duration: 0.5 }}
       >
-        <ExploreArrow href="/" titleClassName="md:text-4xl text-3xl font-bold" title="Latest Blog Posts" arrowText="View All" />
+        <ExploreArrow href="/blogs" titleClassName="md:text-4xl text-3xl font-bold" title="Latest Blog Posts" arrowText="View All" />
       </motion.div>
 
       <motion.div
@@ -52,10 +36,25 @@ export default function Blogs() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
         transition={{ duration: 0.5 }}
-        className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 my-12"
+        className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8 my-12"
       >
-        {blogs.map((blog) => (
-          <BlogCard key={blog.title} {...blog} />
+        {blogsData.map((blog) => (
+          <motion.div
+            key={blog.id}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+            transition={{ duration: 0.5, delay: blog.id * 0.3 }}
+          >
+          <BlogCard
+            key={blog.id}
+            imgSrc={blog.imgSrc}
+            title={blog.title}
+            description={blog.description}
+            date={blog.date}
+            author={blog.author}
+              category={blog.category}
+            />
+          </motion.div>
         ))}
       </motion.div>
     </div>

@@ -4,9 +4,9 @@ import { BlogCardProps } from "@/interfaces/shared-interfaces";
 
 export default function BlogCard({ imgSrc, title, description, date, author, category }: BlogCardProps) {
   return (
-    <div className="w-[447px] h-[411px] bg-white rounded-md rounded-t-2xl">
+    <div className="w-full h-full bg-white rounded-md rounded-t-2xl shadow-md my-4">
       <div className="relative">
-        <Image src={imgSrc} alt={title} width={447} height={298} className="rounded-2xl object-cover" />
+        <Image src={imgSrc} alt={title} width={447} height={298} className="rounded-t-2xl object-cover w-full h-full" />
         {category && (
           <span
             className={cn(

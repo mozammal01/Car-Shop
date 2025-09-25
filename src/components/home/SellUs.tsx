@@ -11,7 +11,7 @@ export default function SellUs() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <div className="max-w-[1700px] mx-auto py-10 md:py-20 px-4">
+    <div className="container mx-auto py-10 md:py-20 px-4">
       <div>
         {/* Mobile: Stack vertically, Desktop: Side by side */}
         <div className="flex flex-col lg:flex-row items-center justify-center">
@@ -36,7 +36,7 @@ export default function SellUs() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
             transition={{ duration: 0.5 }}
-            className="w-full lg:w-[865px] 2xl:bg-[#EEF1FB] p-6 md:p-12 lg:p-20 lg:px-40 flex flex-col justify-center space-y-6 md:space-y-8 min-h-[400px] lg:h-[684px]"
+            className="w-full lg:w-[865px] 2xl:bg-[#EEF1FB] p-6 md:p-12 lg:p-20 lg:px-40 flex flex-col justify-center space-y-6 md:space-y-8 min-h-[400px] lg:h-[600px]"
           >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">Get A Fair Price For Your Car Sell To Us Today</h2>
             <p className="text-gray-500 text-sm md:text-base leading-relaxed">

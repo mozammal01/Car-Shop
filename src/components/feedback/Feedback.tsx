@@ -21,7 +21,7 @@ export default function Feedback({ img, name, job, rating, description }: Feedba
             transition={{ duration: 0.5 }}
             className="rounded-md p-4"
           >
-            <Image src={img} alt="feedback1" width={450} height={470} className="md:w-[450px] w-[400px]" />
+            <Image src={img} alt="feedback1" width={450} height={470} className="md:w-[500px] w-[400px] h-[470px]" />
           </motion.div>
           <motion.div
             ref={ref}

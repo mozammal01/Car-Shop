@@ -11,13 +11,13 @@ export default function ExploreVehicles() {
   const [selectedCategory, setSelectedCategory] = useState("In Stock");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const filteredCars = cars.filter((car) => car.id <= 4);
+  const filteredCars = cars.slice(0, 4);
 
   //
   const doubleFilteredCars = filteredCars.filter((car) => car.condition === selectedCategory);
 
   return (
-    <div className="max-w-[1600px] mx-auto py-20 px-4" id="vehicles">
+    <div className="container mx-auto py-20 px-4" id="vehicles">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: -100 }}
@@ -36,69 +36,61 @@ export default function ExploreVehicles() {
           onCategoryChange={setSelectedCategory}
         />
       </div>
-      <AnimatePresence mode="wait">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
-          transition={{ duration: 0.5 }}
-          className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-8 container mx-auto"
-        >
-          {selectedCategory === "In Stock"
-            ? filteredCars.map((car, index) => (
-                <motion.div
+      <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-8 container mx-auto">
+        {selectedCategory === "In Stock"
+          ? filteredCars.map((car, index) => (
+              <motion.div
+                key={car.id}
+                initial={{ opacity: 0, x: 50, scale: 0.9 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 50, scale: 0.9 }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.1,
+                  ease: "easeInOut",
+                }}
+              >
+                <CarCard
                   key={car.id}
-                  initial={{ opacity: 0, x: 50, scale: 0.9 }}
-                  animate={{ opacity: 1, x: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 50, scale: 0.9 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index * 0.1,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <CarCard
-                    key={car.id}
-                    id={car.id}
-                    imgSrc={car.imgSrc}
-                    title={car.title}
-                    description={car.description}
-                    meterText={car.meterText}
-                    fuelText={car.fuelText}
-                    gearText={car.gearText}
-                    price={car.price}
-                    category={car.category}
-                  />
-                </motion.div>
-              ))
-            : doubleFilteredCars.map((car, index) => (
-                <motion.div
+                  id={car.id}
+                  imgSrc={car.imgSrc}
+                  title={car.title}
+                  description={car.description}
+                  meterText={car.meterText}
+                  fuelText={car.fuelText}
+                  gearText={car.gearText}
+                  price={car.price}
+                  category={car.category}
+                />
+              </motion.div>
+            ))
+          : doubleFilteredCars.map((car, index) => (
+              <motion.div
+                key={car.id}
+                initial={{ opacity: 0, x: 50, scale: 0.9 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 50, scale: 0.9 }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.1,
+                  ease: "easeInOut",
+                }}
+              >
+                <CarCard
                   key={car.id}
-                  initial={{ opacity: 0, x: 50, scale: 0.9 }}
-                  animate={{ opacity: 1, x: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 50, scale: 0.9 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index * 0.1,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <CarCard
-                    key={car.id}
-                    id={car.id}
-                    imgSrc={car.imgSrc}
-                    title={car.title}
-                    description={car.description}
-                    meterText={car.meterText}
-                    fuelText={car.fuelText}
-                    gearText={car.gearText}
-                    price={car.price}
-                    category={car.category}
-                  />
-                </motion.div>
-              ))}
-        </motion.div>
-      </AnimatePresence>
+                  id={car.id}
+                  imgSrc={car.imgSrc}
+                  title={car.title}
+                  description={car.description}
+                  meterText={car.meterText}
+                  fuelText={car.fuelText}
+                  gearText={car.gearText}
+                  price={car.price}
+                  category={car.category}
+                />
+              </motion.div>
+            ))}
+      </div>
     </div>
   );
 }

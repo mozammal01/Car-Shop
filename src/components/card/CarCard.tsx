@@ -9,9 +9,9 @@ import { cn } from "@/lib/utils";
 
 export default function CarCard({ imgSrc, title, description, meterText, fuelText, gearText, price, category, id }: CarCardProps) {
   return (
-    <div className="w-[328px] h-[433px] shadow-lg bg-white rounded-md rounded-t-2xl">
+    <div className="w-full h-full shadow-lg bg-white rounded-md rounded-t-2xl">
       <div className="relative">
-        <Image src={imgSrc} alt="car" width={328} height={200} className="rounded-t-2xl object-cover max-h-[200px]" />
+        <Image src={imgSrc} alt="car" width={328} height={200} className="rounded-t-2xl object-cover w-full h-[220px]" />
         <span className="absolute top-4 right-4 bg-white text-black w-9 h-9 rounded-full flex items-center justify-center">
           <SavedIcon size={12} />
         </span>

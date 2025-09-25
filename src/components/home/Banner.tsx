@@ -3,9 +3,6 @@ import bannerImg from "@/../public/banner/background.jpg";
 import searctBar from "@/../public/banner/search.png"
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Button } from "../ui/button";
-import { SearchIcon } from "lucide-react";
 import SuvCarIcon from "../icons/suvCarIcon";
 import SedanCarIcon from "../icons/sedanCarIcon";
 import HatchbackCarIcon from "../icons/hatchbackCarIcon";
@@ -23,7 +20,7 @@ export default function Banner() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div style={{ backgroundImage: `url(${bannerImg.src})` }} className="w-full h-screen bg-cover bg-center -mt-20">
+    <div style={{ backgroundImage: `url(${bannerImg.src})` }} className="w-full h-screen bg-cover bg-center -mt-20" id="home">
       <motion.div ref={ref} 
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
