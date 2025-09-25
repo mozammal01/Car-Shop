@@ -1,6 +1,6 @@
 "use client";
 import amyWalker from "@/../public/vehicles/author/author.jpg";
-import { Facebook, MapPinIcon, InstagramIcon, MailIcon, PhoneIcon, FacebookIcon, TwitterIcon } from "lucide-react";
+import { MapPinIcon, InstagramIcon, MailIcon, PhoneIcon, FacebookIcon, TwitterIcon } from "lucide-react";
 import Image from "next/image";
 import ContactForm from "./ContactForm";
 import { motion, useInView } from "framer-motion";
@@ -23,7 +23,7 @@ export default function Contact() {
           ref={ref}
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
-          transition={{ duration: 0.5 , delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="xl:col-span-2 col-span-1"
         >
           <Image src={amyWalker} alt="Amy Walker" width={300} height={300} className="rounded-md" />
@@ -33,7 +33,7 @@ export default function Contact() {
           ref={ref}
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
-          transition={{ duration: 0.5 , delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           className="col-span-4 p-4"
         >
           <div className="flex flex-col gap-2 font-semibold uppercase mb-4">
@@ -78,7 +78,7 @@ export default function Contact() {
           ref={ref}
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
-          transition={{ duration: 0.5 , delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
           className="col-span-2"
         >
           <ContactForm />

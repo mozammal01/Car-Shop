@@ -1,7 +1,4 @@
 import Image from "next/image";
-import audiA4 from "@/../public/popular/AUDI-A4.png";
-import audiA5 from "@/../public/popular/AUDI-A5.png";
-import audiA6 from "@/../public/popular/AUDI-A6.png";
 import GearIcon from "../icons/gearIcon";
 import FuelIcon from "../icons/fuelIcon";
 import MeterIcon from "../icons/meterIcon";
@@ -48,7 +45,13 @@ export default function PopularCard({ imgSrc, title, description, meterText, fue
           </div>
         </div>
         <hr />
-        <ExploreArrow href={`/vehicles/${id}`} title={price} arrowText="View Details" className="text-primary" titleClassName="text-xl font-bold" />
+        <ExploreArrow
+          href={`/vehicles/${id}`}
+          title={price}
+          arrowText="View Details"
+          className="text-primary"
+          titleClassName="text-xl font-bold"
+        />
         {/* <div className="flex justify-between items-center my-4">
           <span className="text-xl font-bold">{price}</span>
           <ExploreArrow href={`/vehicles/${id}`} text="View Details" className="text-primary" />

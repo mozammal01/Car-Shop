@@ -49,7 +49,7 @@ export default function SellUs() {
                 <div className="bg-white w-5 h-5 md:w-6 md:h-6 rounded-full relative flex-shrink-0">
                   <RightMarkIcon size={12} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
                 </div>
-                <span className="text-sm md:text-base">We are the UK's largest provider, with more patrols in more places</span>
+                <span className="text-sm md:text-base">We are the UK&apos;s largest provider, with more patrols in more places</span>
               </div>
 
               <div className="flex items-center justify-start gap-2 md:gap-3">

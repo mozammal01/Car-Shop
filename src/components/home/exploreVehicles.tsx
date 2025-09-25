@@ -3,7 +3,7 @@ import { useState } from "react";
 import ExploreArrow from "../exploreArrow/ExploreArrow";
 import CarCard from "../card/CarCard";
 import Category from "../category/category";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { cars } from "@/data/cars";
 
