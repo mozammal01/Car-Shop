@@ -4,7 +4,6 @@ import FuelIcon from "../icons/fuelIcon";
 import MeterIcon from "../icons/meterIcon";
 import ExploreArrow from "../exploreArrow/ExploreArrow";
 import { CarCardProps } from "@/interfaces/shared-interfaces";
-import SavedIcon from "../icons/savedIcon";
 import { cn } from "@/lib/utils";
 
 export default function CarCard({ imgSrc, title, description, meterText, fuelText, gearText, price, category, id }: CarCardProps) {
@@ -12,9 +11,6 @@ export default function CarCard({ imgSrc, title, description, meterText, fuelTex
     <div className="w-full h-full shadow-lg bg-white rounded-md rounded-t-2xl">
       <div className="relative">
         <Image src={imgSrc} alt="car" width={328} height={200} className="rounded-t-2xl object-cover w-full h-[220px]" />
-        <span className="absolute top-4 right-4 bg-white text-black w-9 h-9 rounded-full flex items-center justify-center">
-          <SavedIcon size={12} />
-        </span>
         {category && (
           <span
             className={cn(

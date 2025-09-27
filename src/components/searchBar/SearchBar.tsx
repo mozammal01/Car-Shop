@@ -6,8 +6,8 @@ import { useSearch } from "@/context/SearchContext";
 
 export default function Search() {
   const router = useRouter();
-  const { setSelectedBrand, setSelectedCondition, setSelectedPrice } = useSearch();
-  const { selectedBrand, selectedCondition, selectedPrice } = useSearch();
+  const { setSelectedBrand, setSelectedCondition, setSelectedCategory } = useSearch();
+  const { selectedBrand, selectedCondition, selectedCategory } = useSearch();
   const handleSearch = () => {
     router.push(`/vehicles`);
   };
@@ -41,15 +41,15 @@ export default function Search() {
           </SelectContent>
         </Select>
         <hr className="border-1 h-full border-gray-300" />
-        <Select value={selectedPrice} onValueChange={(value) => setSelectedPrice(value)}>
+        <Select value={selectedCategory} onValueChange={(value) => setSelectedCategory(value)}>
           <SelectTrigger className="w-[180px] border-none">
-            <SelectValue placeholder="All Prices" />
+            <SelectValue placeholder="All Categories" />
           </SelectTrigger>
           <SelectContent className="font-semibold">
             <SelectItem value="All">All</SelectItem>
-            <SelectItem value="10000">10000</SelectItem>
-            <SelectItem value="20000">20000</SelectItem>
-            <SelectItem value="30000">30000</SelectItem>
+            <SelectItem value="Great Price">Great Price</SelectItem>
+            <SelectItem value="Low Mileage">Low Mileage</SelectItem>
+            <SelectItem value="Sale">Sale</SelectItem>
           </SelectContent>
         </Select>
         <div className="flex items-center justify-center gap-6">

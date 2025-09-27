@@ -78,8 +78,8 @@ export interface SearchContextProps {
   setSelectedBrand: (brand: string) => void;
   selectedCondition: string;
   setSelectedCondition: (condition: string) => void;
-  selectedPrice: string;
-  setSelectedPrice: (price: string) => void;
+  selectedCategory: string;
+  setSelectedCategory: (category: string) => void;
 }
 export interface BuyOrSellCardProps {
   title: string;

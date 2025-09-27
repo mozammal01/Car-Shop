@@ -3,7 +3,6 @@ import GearIcon from "../icons/gearIcon";
 import FuelIcon from "../icons/fuelIcon";
 import MeterIcon from "../icons/meterIcon";
 import ExploreArrow from "../exploreArrow/ExploreArrow";
-import SavedIcon from "../icons/savedIcon";
 import { cn } from "@/lib/utils";
 import { PopularCardProps } from "@/interfaces/shared-interfaces";
 
@@ -12,9 +11,6 @@ export default function PopularCard({ imgSrc, title, description, meterText, fue
     <div className="xl:w-[650px] xl:h-[270px] bg-[#272f4d69] shadow-md rounded-md rounded-t-2xl lg:flex items-center">
       <div className="relative">
         <Image src={imgSrc} alt="car" width={400} height={370} className="rounded-t-2xl object-cover w-full min-w-[300px] lg:h-[270px]" />
-        <span className="absolute top-4 right-4 bg-white text-black w-9 h-9 rounded-full flex items-center justify-center">
-          <SavedIcon size={12} />
-        </span>
         {category && (
           <span
             className={cn(

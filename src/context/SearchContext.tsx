@@ -7,7 +7,7 @@ const SearchContext = createContext<SearchContextProps | undefined>(undefined);
 export function SearchProvider({ children }: { children: React.ReactNode }) {
   const [selectedBrand, setSelectedBrand] = useState("All");
   const [selectedCondition, setSelectedCondition] = useState("All");
-  const [selectedPrice, setSelectedPrice] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   return (
     <SearchContext.Provider
@@ -16,8 +16,8 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
         setSelectedBrand,
         selectedCondition,
         setSelectedCondition,
-        selectedPrice,
-        setSelectedPrice,
+        selectedCategory,
+        setSelectedCategory,
       }}
     >
       {children}

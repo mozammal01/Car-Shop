@@ -23,7 +23,7 @@ export default function Vehicles({filteredCars}: {filteredCars: typeof cars}) {
           exit={{ opacity: 0, y: 50, scale: 0.9 }}
           transition={{
             duration: 0.4,
-            delay: index * 0.3,
+            delay: index * 0.1,
             ease: "easeInOut",
           }}
         >
