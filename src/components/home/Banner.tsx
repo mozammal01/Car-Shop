@@ -1,7 +1,5 @@
 "use client";
 import bannerImg from "@/../public/banner/background.jpg";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
 import SuvCarIcon from "../icons/suvCarIcon";
 import SedanCarIcon from "../icons/sedanCarIcon";
 import HatchbackCarIcon from "../icons/hatchbackCarIcon";
@@ -12,8 +10,6 @@ import { motion, useInView } from "framer-motion";
 import SearchBar from "../searchBar/SearchBar";
 
 export default function Banner() {
-  const [cat, setCat] = useState("All");
-  const categories = ["All", "New", "Used"];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -29,21 +25,7 @@ export default function Banner() {
         <p>Find cars for sale and for rent near you</p>
         <h1 className="md:text-6xl text-4xl font-bold text-white">Find Your Perfect Car</h1>
 
-        {/* Categories */}
-        <div className="flex space-x-4">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className={cn(
-                "px-3 py-2 rounded-md hover:bg-white hover:text-primary transition-all duration-300",
-                cat === category ? "border-b-2 border-white rounded-none" : "bg-transparent text-white"
-              )}
-              onClick={() => setCat(category)}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+        
 
         {/* Search */}
         <SearchBar />
