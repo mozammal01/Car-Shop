@@ -1,5 +1,4 @@
 "use client";
-import ExploreArrow from "../exploreArrow/ExploreArrow";
 import Category from "../category/category";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -15,16 +14,10 @@ export default function CarFinder() {
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
         transition={{ duration: 0.5 }}
       >
-        <ExploreArrow
-          href="/carsFinder"
-          titleClassName="md:text-5xl text-3xl font-bold"
-          title="Shop Box Car Your Way"
-          arrowText="View More"
-        />
+        <h3 className="md:text-5xl text-3xl font-bold">Shop Box Car Your Way</h3>
       </motion.div>
-      <Category category1="New Cars For Sale" category2="Used Cars For Sale" category3="Browse By Type" category4="Browse By Brand" />
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 my-10">
         {/*  */}
         <motion.ul
           ref={ref}

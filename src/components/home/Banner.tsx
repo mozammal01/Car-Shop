@@ -1,6 +1,6 @@
 "use client";
 import bannerImg from "@/../public/banner/background.jpg";
-import searctBar from "@/../public/banner/search.png"
+import searctBar from "@/../public/banner/search.png";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import SuvCarIcon from "../icons/suvCarIcon";
@@ -12,6 +12,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import SearchBar from "../searchBar/SearchBar";
 
 export default function Banner() {
   const [cat, setCat] = useState("All");
@@ -21,11 +22,13 @@ export default function Banner() {
 
   return (
     <div style={{ backgroundImage: `url(${bannerImg.src})` }} className="w-full h-screen bg-cover bg-center -mt-20" id="home">
-      <motion.div ref={ref} 
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
-      transition={{ duration: 0.5 }}
-      className="w-full h-full flex flex-col space-y-12 items-center justify-center text-white pt-20 px-4">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+        transition={{ duration: 0.5 }}
+        className="w-full h-full flex flex-col space-y-12 items-center justify-center text-white pt-20 px-4"
+      >
         <p>Find cars for sale and for rent near you</p>
         <h1 className="md:text-6xl text-4xl font-bold text-white">Find Your Perfect Car</h1>
 
@@ -46,12 +49,8 @@ export default function Banner() {
         </div>
 
         {/* Search */}
-        <Link href="/vehicles">
-        
-        <div className="flex lg:flex-row flex-col space-x-4 space-y-2 py-4 bg-white rounded lg:rounded-full p-2 px-6 text-primary font-semibold">
-          <Image src={searctBar} alt="search" width={850} height={200} />
-        </div>
-        </Link>
+        <SearchBar />
+
         <p>Or Browse Featured Model</p>
 
         {/* Browse Featured Model */}
