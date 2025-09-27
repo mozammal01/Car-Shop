@@ -1,6 +1,5 @@
 "use client";
 import bannerImg from "@/../public/banner/background.jpg";
-import searctBar from "@/../public/banner/search.png";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import SuvCarIcon from "../icons/suvCarIcon";
@@ -10,8 +9,6 @@ import CoupeCarIcon from "../icons/coupeCarIcon";
 import HybridCarIcon from "../icons/hybridCarIcon";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import Link from "next/link";
-import Image from "next/image";
 import SearchBar from "../searchBar/SearchBar";
 
 export default function Banner() {

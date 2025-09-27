@@ -1,5 +1,4 @@
 "use client";
-import Category from "../category/category";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 

@@ -73,6 +73,14 @@ export interface BlogCardProps {
   category?: string;
 }
 
+export interface SearchContextProps {
+  selectedBrand: string;
+  setSelectedBrand: (brand: string) => void;
+  selectedCondition: string;
+  setSelectedCondition: (condition: string) => void;
+  selectedPrice: string;
+  setSelectedPrice: (price: string) => void;
+}
 export interface BuyOrSellCardProps {
   title: string;
   description: string;

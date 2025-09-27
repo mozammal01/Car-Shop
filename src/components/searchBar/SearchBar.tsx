@@ -1,23 +1,22 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { SearchIcon } from "lucide-react";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
-export default function SearchBar() {
+import { useSearch } from "@/context/SearchContext";
+
+export default function Search() {
   const router = useRouter();
-  const [selectedBrand, setSelectedBrand] = useState("All");
-  const [selectedCondition, setSelectedCondition] = useState("All");
-  const [selectedPrice, setSelectedPrice] = useState("All");
+  const { setSelectedBrand, setSelectedCondition, setSelectedPrice } = useSearch();
+  const { selectedBrand, selectedCondition, selectedPrice } = useSearch();
   const handleSearch = () => {
-    router.refresh();
-    router.push(`/vehicles?brand=${selectedBrand}&condition=${selectedCondition}&price=${selectedPrice}`);
+    router.push(`/vehicles`);
   };
   return (
     <>
       {/* Search */}
       <div className="flex lg:flex-row flex-col space-x-4 space-y-2 py-4 bg-white rounded lg:rounded-full p-2 px-6 text-primary font-semibold w-fit mx-auto mt-10">
         {/*  */}
-        <Select onValueChange={(value) => setSelectedBrand(value)}>
+        <Select value={selectedBrand} onValueChange={(value) => setSelectedBrand(value as string)}>
           <SelectTrigger className="w-[180px] border-none">
             <SelectValue placeholder="Any Models" />
           </SelectTrigger>
@@ -31,7 +30,7 @@ export default function SearchBar() {
         </Select>
         <hr className="border-1 h-full border-gray-300" />
         {/*  */}
-        <Select onValueChange={(value) => setSelectedCondition(value)}>
+        <Select value={selectedCondition} onValueChange={(value) => setSelectedCondition(value)}>
           <SelectTrigger className="w-[180px] border-none">
             <SelectValue placeholder="Condition" className="placeholder:text-primary" />
           </SelectTrigger>
@@ -42,7 +41,7 @@ export default function SearchBar() {
           </SelectContent>
         </Select>
         <hr className="border-1 h-full border-gray-300" />
-        <Select onValueChange={(value) => setSelectedPrice(value)}>
+        <Select value={selectedPrice} onValueChange={(value) => setSelectedPrice(value)}>
           <SelectTrigger className="w-[180px] border-none">
             <SelectValue placeholder="All Prices" />
           </SelectTrigger>
@@ -58,10 +57,8 @@ export default function SearchBar() {
             onClick={handleSearch}
             className="bg-primary text-white w-[150px] rounded-full font-medium transition-colors duration-200"
           >
-            {/* <Link href={`/vehicles?brand=${selectedBrand}&condition=${selectedCondition}&price=${selectedPrice}`}> */}
             <SearchIcon />
             Search Cars
-            {/* </Link> */}
           </Button>
         </div>
       </div>
