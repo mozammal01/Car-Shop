@@ -45,13 +45,13 @@ export default function Blogs() {
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
             transition={{ duration: 0.5, delay: blog.id * 0.3 }}
           >
-          <BlogCard
-            key={blog.id}
-            imgSrc={blog.imgSrc}
-            title={blog.title}
-            description={blog.description}
-            date={blog.date}
-            author={blog.author}
+            <BlogCard
+              key={blog.id}
+              imgSrc={blog.imgSrc}
+              title={blog.title}
+              description={blog.description}
+              date={blog.date}
+              author={blog.author}
               category={blog.category}
             />
           </motion.div>

@@ -126,8 +126,8 @@ export default function PopulerCars() {
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: 50, scale: 0.9 }}
                 transition={{
-                  duration: 0.4,
-                  delay: index * 0.1,
+                  duration: 0.2,
+                  delay: index * 0.2,
                   ease: "easeInOut",
                 }}
               >
