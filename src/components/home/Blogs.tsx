@@ -28,7 +28,11 @@ export default function Blogs() {
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
         transition={{ duration: 0.5 }}
       >
-        <ExploreArrow href="/blogs" titleClassName="md:text-4xl text-3xl font-bold" title="Latest Blog Posts" arrowText="View All" />
+        {location === "/blogs" ? (
+          ""
+        ) : (
+          <ExploreArrow href="/blogs" titleClassName="md:text-4xl text-3xl font-bold" title="Latest Blog Posts" arrowText="View All" />
+        )}
       </motion.div>
 
       <motion.div

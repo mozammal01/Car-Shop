@@ -40,7 +40,7 @@ export default function Navigation() {
     {
       href: "/",
       label: "Home",
-      hasDropdown: false
+      hasDropdown: false,
     },
     {
       href: "#vehicles",
@@ -69,9 +69,10 @@ export default function Navigation() {
       label: "Pages",
       hasDropdown: true,
       dropdownItems: [
-        { href: "/brands", label: "brands" },
-        { href: "/vehicles", label: "vehicles" },
-        { href: "/contact", label: "contact" }
+        { href: "/brands", label: "Brands" },
+        { href: "/vehicles", label: "Vehicles" },
+        { href: "/contact", label: "Contact" },
+        { href: "/blogs", label: "Blogs" },
       ],
     },
     { href: "/contact", label: "About", hasDropdown: false },
@@ -85,7 +86,6 @@ export default function Navigation() {
       animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
       transition={{ duration: 0.5 }}
       className="w-full shadow-sm top-0 z-50 bg-primary md:bg-transparent"
-
     >
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
@@ -138,15 +138,6 @@ export default function Navigation() {
                 )}
               </div>
             ))}
-            <Link
-              href="/signin"
-              className="flex md:hidden lg:flex items-center space-x-2  text-white hover:text-primary font-medium transition-colors duration-200"
-            >
-              <div className="flex items-center space-x-2 hover:bg-white px-4 rounded-md py-2">
-                <User className="h-4 w-4" />
-                <span>Sign In</span>
-              </div>
-            </Link>
             <Button className="bg-primary md:bg-transparent hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200 md:hidden lg:flex">
               Submit Listing
             </Button>
@@ -223,14 +214,6 @@ export default function Navigation() {
 
             {/* Mobile Sign In & CTA */}
             <div className="px-4 py-4 border-t border-gray-200 space-y-3">
-              <Link
-                href="/signin"
-                className="flex items-center space-x-2 py-2 text-gray-900 hover:text-primary font-medium transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                <User className="h-4 w-4" />
-                <span>Sign In</span>
-              </Link>
               <Button
                 className="w-full bg-primary hover:bg-blue-700 text-white rounded-md font-medium transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
